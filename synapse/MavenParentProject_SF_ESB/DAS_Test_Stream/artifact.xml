@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Test_Stream_1_0" groupId="com.example.DAS_Test_Stream.stream" version="1.0.0" type="event/stream" serverRole="ComplexEventProcessor">
+        <file>src/main/stream/Test_Stream_1_0.json</file>
+    </artifact>
+    <artifact name="Test_Reciever_1_0" groupId="com.example.DAS_Test_Stream.receiver" version="1.0.0" type="event/receiver" serverRole="ComplexEventProcessor">
+        <file>src/main/receiver/Test_Reciever_1_0.xml</file>
+    </artifact>
+    <artifact name="Test_Publisher_1_0" groupId="com.example.DAS_Test_Stream.publisher" version="1.0.0" type="event/publisher" serverRole="ComplexEventProcessor">
+        <file>src/main/publisher/Test_Publisher_1_0.xml</file>
+    </artifact>
+    </artifacts>
