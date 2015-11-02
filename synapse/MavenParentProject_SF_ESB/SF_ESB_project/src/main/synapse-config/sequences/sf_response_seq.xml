@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="sf_response_seq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+  <header name="Access-Control-Allow-Origin" scope="transport" value="*"/>
+  <drop/>
+</sequence>

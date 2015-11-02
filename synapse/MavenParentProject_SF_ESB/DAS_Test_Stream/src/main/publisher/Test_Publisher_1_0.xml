@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventPublisher name="Test_Publisher_1_0" statistics="disable"
+                trace="disable" xmlns="http://wso2.org/carbon/eventpublisher">
+    <from streamName="PublishEventStreamOpportunities121Ex" version="1.0.3"/>
+    <mapping customMapping="disable" type="json"/>
+    <to eventAdapterType="logger">
+        <property name="uniqueId"></property>
+    </to>
+</eventPublisher>

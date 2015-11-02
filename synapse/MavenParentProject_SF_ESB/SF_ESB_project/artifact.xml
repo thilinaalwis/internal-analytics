@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="newProxyService10" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/newProxyService10.xml</file>
+    </artifact>
+    <artifact name="sf_response_seq" groupId="com.example.SF_ESB_project.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/sf_response_seq.xml</file>
+    </artifact>
+    <artifact name="sf_auth" groupId="com.example.SF_ESB_project.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/sf_auth.xml</file>
+    </artifact>
+    <artifact name="SimpleProxyLead" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SimpleProxyLead.xml</file>
+    </artifact>
+    <artifact name="SimpleProxyAccount" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SimpleProxyAccount.xml</file>
+    </artifact>
+    <artifact name="RedmineConnectorTestProxy" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/RedmineConnectorTestProxy.xml</file>
+    </artifact>
+</artifacts>

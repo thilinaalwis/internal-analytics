@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SimpleProxyAccount" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <salesforce.getUserInformation configKey="sf_auth"/>
+      <salesforce.describeGlobal/>
+      <salesforce.query>
+        <batchSize>2000</batchSize>
+        <queryString>SELECT AccountSource,Account_Classification__c,Activation_Date_Populated__c,Activation_Date__c,Active_Customer__c,Active_User__c,BillingCity,BillingCountry,BillingPostalCode,BillingState,BillingStreet,Channel__c,Closed_Date_Roll_up__c,Closed_Won_Opportunity_Value_New__c,Competitor__c,CreatedDate,CurrencyIsoCode,Customer_Activation_Date__c,Customer_count__c,Date_Attended_a_BootCamp_Campaign__c,Days_since_Last_Activity__c,Deactivation_Date_12__c,Deactivation_Date__c,Field_Sales_Owner__c,Financial_Year_End_Date__c,Id,Includes_Consulting__c,Includes_Dev_Support__c,Includes_QuickStart__c,IsDeleted,LastActivityDate,Last_Activity_Date__c,Lost_Customer__c,Lost_Date_Override__c,Lost_Date__c,Lost_Reason__c,MasterRecordId,Most_Recent_Opp_Amount__c,Most_Recent_Opp_Name__c,Name,OwnerId,ParentId,Partner_Driven__c,Partner_Level__c,Partner_Logo__c,Partner_Start_Date__c,Phone,Rating,Recent_Bootcamp_Attendance_Date__c,RecordTypeId,Region__c,Salesforce_record_id__c,ShippingCity,ShippingCountry,ShippingPostalCode,ShippingState,ShippingStreet,SicDesc,Subscription_Activation_Date__c,Subscription_Booking_Date__c,Subscription_Deactivation_Date__c,Sub_Catergory__c,Technical_Owner__c,Type,Type_Code_Rollup__c,Unique_Key__c,User_ID__c FROM Account</queryString>
+      </salesforce.query>
+      <log level="full"/>
+      <iterate expression="//abc:records" id="iterater10d"
+        sequential="true" xmlns:abc="urn:partner.soap.sforce.com">
+        <target>
+          <sequence>
+            <publishEvent>
+              <eventSink>EventSink12</eventSink>
+              <streamName>PublishEventStreamAccount3_0_4</streamName>
+              <streamVersion>2.4.8</streamVersion>
+              <attributes>
+                <meta/>
+                <correlation/>
+                <payload>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:AccountSource, 1, number(not(contains(//sf:AccountSource,'sf:'))) * string-length(//sf:AccountSource))"
+                    name="AccountSource" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Account_Classification__c, 1, number(not(contains(//sf:Account_Classification__c,'sf:'))) * string-length(//sf:Account_Classification__c))"
+                    name="Account_Classification__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Activation_Date_Populated__c, 1, number(not(contains(//sf:Activation_Date_Populated__c,'sf:'))) * string-length(//sf:Activation_Date_Populated__c))"
+                    name="Activation_Date_Populated__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Activation_Date__c, 1, number(not(contains(//sf:Activation_Date__c,'sf:'))) * string-length(//sf:Activation_Date__c))"
+                    name="Activation_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Active_Customer__c, 1, number(not(contains(//sf:Active_Customer__c,'sf:'))) * string-length(//sf:Active_Customer__c))"
+                    name="Active_Customer__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Active_User__c, 1, number(not(contains(//sf:Active_User__c,'sf:'))) * string-length(//sf:Active_User__c))"
+                    name="Active_User__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:BillingCity, 1, number(not(contains(//sf:BillingCity,'sf:'))) * string-length(//sf:BillingCity))"
+                    name="BillingCity" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:BillingCountry, 1, number(not(contains(//sf:BillingCountry,'sf:'))) * string-length(//sf:BillingCountry))"
+                    name="BillingCountry" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:BillingPostalCode, 1, number(not(contains(//sf:BillingPostalCode,'sf:'))) * string-length(//sf:BillingPostalCode))"
+                    name="BillingPostalCode" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:BillingState, 1, number(not(contains(//sf:BillingState,'sf:'))) * string-length(//sf:BillingState))"
+                    name="BillingState" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:BillingStreet, 1, number(not(contains(//sf:BillingStreet,'sf:'))) * string-length(//sf:BillingStreet))"
+                    name="BillingStreet" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Channel__c, 1, number(not(contains(//sf:Channel__c,'sf:'))) * string-length(//sf:Channel__c))"
+                    name="Channel__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Closed_Date_Roll_up__c, 1, number(not(contains(//sf:Closed_Date_Roll_up__c,'sf:'))) * string-length(//sf:Closed_Date_Roll_up__c))"
+                    name="Closed_Date_Roll_up__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Closed_Won_Opportunity_Value_New__c, 1, number(not(contains(//sf:Closed_Won_Opportunity_Value_New__c,'sf:'))) * string-length(//sf:Closed_Won_Opportunity_Value_New__c))"
+                    name="Closed_Won_Opportunity_Value_New__c"
+                    type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Competitor__c, 1, number(not(contains(//sf:Competitor__c,'sf:'))) * string-length(//sf:Competitor__c))"
+                    name="Competitor__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:CreatedDate, 1, number(not(contains(//sf:CreatedDate,'sf:'))) * string-length(//sf:CreatedDate))"
+                    name="CreatedDate" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:CurrencyIsoCode, 1, number(not(contains(//sf:CurrencyIsoCode,'sf:'))) * string-length(//sf:CurrencyIsoCode))"
+                    name="CurrencyIsoCode" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Customer_Activation_Date__c, 1, number(not(contains(//sf:Customer_Activation_Date__c,'sf:'))) * string-length(//sf:Customer_Activation_Date__c))"
+                    name="Customer_Activation_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Customer_count__c, 1, number(not(contains(//sf:Customer_count__c,'sf:'))) * string-length(//sf:Customer_count__c))"
+                    name="Customer_count__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Date_Attended_a_BootCamp_Campaign__c, 1, number(not(contains(//sf:Date_Attended_a_BootCamp_Campaign__c,'sf:'))) * string-length(//sf:Date_Attended_a_BootCamp_Campaign__c))"
+                    name="Date_Attended_a_BootCamp_Campaign__c"
+                    type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Days_since_Last_Activity__c, 1, number(not(contains(//sf:Days_since_Last_Activity__c,'sf:'))) * string-length(//sf:Days_since_Last_Activity__c))"
+                    name="Days_since_Last_Activity__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Deactivation_Date_12__c, 1, number(not(contains(//sf:Deactivation_Date_12__c,'sf:'))) * string-length(//sf:Deactivation_Date_12__c))"
+                    name="Deactivation_Date_12__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Deactivation_Date__c, 1, number(not(contains(//sf:Deactivation_Date__c,'sf:'))) * string-length(//sf:Deactivation_Date__c))"
+                    name="Deactivation_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Field_Sales_Owner__c, 1, number(not(contains(//sf:Field_Sales_Owner__c,'sf:'))) * string-length(//sf:Field_Sales_Owner__c))"
+                    name="Field_Sales_Owner__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Financial_Year_End_Date__c, 1, number(not(contains(//sf:Financial_Year_End_Date__c,'sf:'))) * string-length(//sf:Financial_Year_End_Date__c))"
+                    name="Financial_Year_End_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Id, 1, number(not(contains(//sf:Id,'sf:'))) * string-length(//sf:Id))"
+                    name="Id" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Includes_Consulting__c, 1, number(not(contains(//sf:Includes_Consulting__c,'sf:'))) * string-length(//sf:Includes_Consulting__c))"
+                    name="Includes_Consulting__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Includes_Dev_Support__c, 1, number(not(contains(//sf:Includes_Dev_Support__c,'sf:'))) * string-length(//sf:Includes_Dev_Support__c))"
+                    name="Includes_Dev_Support__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Includes_QuickStart__c, 1, number(not(contains(//sf:Includes_QuickStart__c,'sf:'))) * string-length(//sf:Includes_QuickStart__c))"
+                    name="Includes_QuickStart__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:IsDeleted, 1, number(not(contains(//sf:IsDeleted,'sf:'))) * string-length(//sf:IsDeleted))"
+                    name="IsDeleted" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:LastActivityDate, 1, number(not(contains(//sf:LastActivityDate,'sf:'))) * string-length(//sf:LastActivityDate))"
+                    name="LastActivityDate" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Last_Activity_Date__c, 1, number(not(contains(//sf:Last_Activity_Date__c,'sf:'))) * string-length(//sf:Last_Activity_Date__c))"
+                    name="Last_Activity_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Lost_Customer__c, 1, number(not(contains(//sf:Lost_Customer__c,'sf:'))) * string-length(//sf:Lost_Customer__c))"
+                    name="Lost_Customer__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Lost_Date_Override__c, 1, number(not(contains(//sf:Lost_Date_Override__c,'sf:'))) * string-length(//sf:Lost_Date_Override__c))"
+                    name="Lost_Date_Override__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Lost_Date__c, 1, number(not(contains(//sf:Lost_Date__c,'sf:'))) * string-length(//sf:Lost_Date__c))"
+                    name="Lost_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Lost_Reason__c, 1, number(not(contains(//sf:Lost_Reason__c,'sf:'))) * string-length(//sf:Lost_Reason__c))"
+                    name="Lost_Reason__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:MasterRecordId, 1, number(not(contains(//sf:MasterRecordId,'sf:'))) * string-length(//sf:MasterRecordId))"
+                    name="MasterRecordId" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Most_Recent_Opp_Amount__c, 1, number(not(contains(//sf:Most_Recent_Opp_Amount__c,'sf:'))) * string-length(//sf:Most_Recent_Opp_Amount__c))"
+                    name="Most_Recent_Opp_Amount__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Most_Recent_Opp_Name__c, 1, number(not(contains(//sf:Most_Recent_Opp_Name__c,'sf:'))) * string-length(//sf:Most_Recent_Opp_Name__c))"
+                    name="Most_Recent_Opp_Name__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Name, 1, number(not(contains(//sf:Name,'sf:'))) * string-length(//sf:Name))"
+                    name="Name" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:OwnerId, 1, number(not(contains(//sf:OwnerId,'sf:'))) * string-length(//sf:OwnerId))"
+                    name="OwnerId" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ParentId, 1, number(not(contains(//sf:ParentId,'sf:'))) * string-length(//sf:ParentId))"
+                    name="ParentId" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Partner_Driven__c, 1, number(not(contains(//sf:Partner_Driven__c,'sf:'))) * string-length(//sf:Partner_Driven__c))"
+                    name="Partner_Driven__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Partner_Level__c, 1, number(not(contains(//sf:Partner_Level__c,'sf:'))) * string-length(//sf:Partner_Level__c))"
+                    name="Partner_Level__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Partner_Logo__c, 1, number(not(contains(//sf:Partner_Logo__c,'sf:'))) * string-length(//sf:Partner_Logo__c))"
+                    name="Partner_Logo__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Partner_Start_Date__c, 1, number(not(contains(//sf:Partner_Start_Date__c,'sf:'))) * string-length(//sf:Partner_Start_Date__c))"
+                    name="Partner_Start_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Rating, 1, number(not(contains(//sf:Rating,'sf:'))) * string-length(//sf:Rating))"
+                    name="Rating" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Recent_Bootcamp_Attendance_Date__c, 1, number(not(contains(//sf:Recent_Bootcamp_Attendance_Date__c,'sf:'))) * string-length(//sf:Recent_Bootcamp_Attendance_Date__c))"
+                    name="Recent_Bootcamp_Attendance_Date__c"
+                    type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:RecordTypeId, 1, number(not(contains(//sf:RecordTypeId,'sf:'))) * string-length(//sf:RecordTypeId))"
+                    name="RecordTypeId" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Region__c, 1, number(not(contains(//sf:Region__c,'sf:'))) * string-length(//sf:Region__c))"
+                    name="Region__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Salesforce_record_id__c, 1, number(not(contains(//sf:Salesforce_record_id__c,'sf:'))) * string-length(//sf:Salesforce_record_id__c))"
+                    name="Salesforce_record_id__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ShippingCity, 1, number(not(contains(//sf:ShippingCity,'sf:'))) * string-length(//sf:ShippingCity))"
+                    name="ShippingCity" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ShippingCountry, 1, number(not(contains(//sf:ShippingCountry,'sf:'))) * string-length(//sf:ShippingCountry))"
+                    name="ShippingCountry" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ShippingPostalCode, 1, number(not(contains(//sf:ShippingPostalCode,'sf:'))) * string-length(//sf:ShippingPostalCode))"
+                    name="ShippingPostalCode" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ShippingState, 1, number(not(contains(//sf:ShippingState,'sf:'))) * string-length(//sf:ShippingState))"
+                    name="ShippingState" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:ShippingStreet, 1, number(not(contains(//sf:ShippingStreet,'sf:'))) * string-length(//sf:ShippingStreet))"
+                    name="ShippingStreet" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:SicDesc, 1, number(not(contains(//sf:SicDesc,'sf:'))) * string-length(//sf:SicDesc))"
+                    name="SicDesc" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Subscription_Activation_Date__c, 1, number(not(contains(//sf:Subscription_Activation_Date__c,'sf:'))) * string-length(//sf:Subscription_Activation_Date__c))"
+                    name="Subscription_Activation_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Subscription_Booking_Date__c, 1, number(not(contains(//sf:Subscription_Booking_Date__c,'sf:'))) * string-length(//sf:Subscription_Booking_Date__c))"
+                    name="Subscription_Booking_Date__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Subscription_Deactivation_Date__c, 1, number(not(contains(//sf:Subscription_Deactivation_Date__c,'sf:'))) * string-length(//sf:Subscription_Deactivation_Date__c))"
+                    name="Subscription_Deactivation_Date__c"
+                    type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Sub_Catergory__c, 1, number(not(contains(//sf:Sub_Catergory__c,'sf:'))) * string-length(//sf:Sub_Catergory__c))"
+                    name="Sub_Catergory__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Technical_Owner__c, 1, number(not(contains(//sf:Technical_Owner__c,'sf:'))) * string-length(//sf:Technical_Owner__c))"
+                    name="Technical_Owner__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Type, 1, number(not(contains(//sf:Type,'sf:'))) * string-length(//sf:Type))"
+                    name="Type" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Type_Code_Rollup__c, 1, number(not(contains(//sf:Type_Code_Rollup__c,'sf:'))) * string-length(//sf:Type_Code_Rollup__c))"
+                    name="Type_Code_Rollup__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Unique_Key__c, 1, number(not(contains(//sf:Unique_Key__c,'sf:'))) * string-length(//sf:Unique_Key__c))"
+                    name="Unique_Key__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:User_ID__c, 1, number(not(contains(//sf:User_ID__c,'sf:'))) * string-length(//sf:User_ID__c))"
+                    name="User_ID__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                </payload>
+                <arbitrary/>
+              </attributes>
+            </publishEvent>
+          </sequence>
+        </target>
+      </iterate>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </target>
+</proxy>

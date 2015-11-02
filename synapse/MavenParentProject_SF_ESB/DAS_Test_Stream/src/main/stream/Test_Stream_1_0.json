@@ -1,0 +1,342 @@
+{
+  "name": "PublishEventStreamOpportunities121Ex",
+  "version": "1.0.3",
+  "nickName": "",
+  "description": "",
+  "metaData": [
+  
+  ],
+  "correlationData": [
+   
+  ],
+  "payloadData": [
+   {
+      "name": "AccountId",
+      "type": "STRING"
+    },
+ {
+      "name": "Action__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Amount",
+      "type": "STRING"
+    },
+ {
+      "name": "Best_Case_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Channel_error__c",
+      "type": "STRING"
+    },
+ {
+      "name": "CloseDate",
+      "type": "STRING"
+    },
+ {
+      "name": "Closed_Month__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Commission_included__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Competitor_we_Lost_to__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Confidence__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Contact_Roles__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Conversion_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "CreatedDate",
+      "type": "STRING"
+    },
+ {
+      "name": "Created_Today__c",
+      "type": "STRING"
+    },
+ {
+      "name": "CurrencyIsoCode",
+      "type": "STRING"
+    },
+ {
+      "name": "Current_Year_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "End_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Engagement_Code__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Expected_Case_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "First_Account_Sale__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Fiscal",
+      "type": "STRING"
+    },
+ {
+      "name": "FiscalQuarter",
+      "type": "STRING"
+    },
+ {
+      "name": "FiscalYear",
+      "type": "STRING"
+    },
+ {
+      "name": "Id",
+      "type": "STRING"
+    },
+ {
+      "name": "If_Lost_Reason_Other_Please_Explain__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Implied_Exchange_Rate__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Includes_Consulting__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Includes_Dev_Support__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Includes_Production_Support__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Includes_QuickStart__c",
+      "type": "STRING"
+    },
+ {
+      "name": "IsClosed",
+      "type": "STRING"
+    },
+ {
+      "name": "IsDeleted",
+      "type": "STRING"
+    },
+ {
+      "name": "IsWon",
+      "type": "STRING"
+    },
+ {
+      "name": "LastActivityDate",
+      "type": "STRING"
+    },
+ {
+      "name": "LastModifiedDate",
+      "type": "STRING"
+    },
+ {
+      "name": "Last_Account_Sale__c",
+      "type": "STRING"
+    },
+ {
+      "name": "LeadSource",
+      "type": "STRING"
+    },
+ {
+      "name": "Lead_Type__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Line_Item_Divergence__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Line_Item_Total_Amount_USD__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Name",
+      "type": "STRING"
+    },
+ {
+      "name": "New_Breakdown_Type__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Opportunity_Term__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Opp_End_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Opp_Start_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "OwnerId",
+      "type": "STRING"
+    },
+ {
+      "name": "Partnership__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_commission__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Lead_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Lead_Close_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Registration_Expires__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Registration_Status__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Sales_Contact_Email__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Partner_Sales_Contact_Name__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Prev_Year_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Pricebook2Id",
+      "type": "STRING"
+    },
+ {
+      "name": "Prior_Stage__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Production_Support_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Products_in_use__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Project_Code__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Project__c",
+      "type": "STRING"
+    },
+ {
+      "name": "IsClosed",
+      "type": "STRING"
+    },
+ {
+      "name": "Reason_Lost__c",
+      "type": "STRING"
+    },
+ {
+      "name": "RecordTypeId",
+      "type": "STRING"
+    },
+ {
+      "name": "Referred_to_Partners__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Registered_by__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Renewal_Stage__c",
+      "type": "STRING"
+    },
+ {
+      "name": "RFI_RFQ_RFP_BID__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Salesforce_Record_Id__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Services_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "SFDC__c",
+      "type": "STRING"
+    },
+ {
+      "name": "StageName",
+      "type": "STRING"
+    },
+ {
+      "name": "Stage_Change_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Start_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Subscription_Activation_Date_del__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Subscription_Deactivation_Date__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Test_Formula__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Type",
+      "type": "STRING"
+    },
+ {
+      "name": "Type_Code__c",
+      "type": "STRING"
+    },
+ {
+      "name": "unique_count__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Worse_Case_Amount__c",
+      "type": "STRING"
+    },
+ {
+      "name": "Zero_Amount__c",
+      "type": "STRING"
+    }
+  ]
+}
