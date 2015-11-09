@@ -1,0 +1,344 @@
+<%
+    
+var log = new Log();
+//log.info("This is the Data file for Jenkins table gadget");
+
+
+var BuildStatus;
+var arrayTemp =[];		//array to store all timestamps
+var durationOfFailure;	//holds the duration of failure if the product is currently infailed state
+var latestTimeStamp = [];
+var currentData;
+var weekData = [];
+var currentLoopDate;
+var dateDays =[];			//this contains unique dates got from arrtemp
+var failedComponents="";	//holds components that failed
+var url = "";				//holds the url for the failed build
+
+var db = new Database("jdbc:mysql://192.168.8.35/sf", "sf", "sf!23");
+try{
+	
+
+	//this array hold all the timetamps in order
+	arrayTemp = getTimestamps();
+
+	//this array has the latest/last updated timestamp
+	latestTimeStamp[0] = (arrayTemp[arrayTemp.length-1]).toString();
+	//log.info("*************************Get previous days statuses**********************************");
+	
+	weekData[0] = getDataLast7Days(arrayTemp[arrayTemp.length-1]);
+
+	//the latest date
+	 var firstDay = ((arrayTemp[arrayTemp.length-1]).toString()).split(" ");
+
+	 //dateDays - consists all unique dates
+	 dateDays[0] = firstDay[0];
+	
+	var h = 1;		//counter to increment the weekData array
+	var i=1;		//counter to increment the dateDays array
+
+	//traverse through all the distict timestamps
+	for(no = 1;no< arrayTemp.length;no++)
+	{
+		//currentLoopDate - get the date from the timestamp of the current loop instance
+		currentLoopDate = ((arrayTemp[arrayTemp.length-no]).toString()).split(" ");
+
+		//check if the date of the timestamp already exists in the dateDays array
+		if(currentLoopDate[0]!=dateDays[(i-1)])
+		{
+			//add the date that does not exist in dateDays array
+			dateDays[i++] = currentLoopDate[0];
+			
+			//add data for this particular date
+			weekData[h++] = getDataLast7Days(arrayTemp[arrayTemp.length-no]);			
+		}		
+	}
+	//*********************************End of Get previous days statuses***************************
+	
+	//get data with today and past days statuses
+	currentData = getData(arrayTemp[arrayTemp.length-1]);
+}
+catch(e){  
+	log.info(e);
+}
+
+	function getData(lastTimeStamp) 
+	{
+		var iconString="";
+		var attachFailedComp="";
+		//var attachUrl="";
+		var Data = [];
+		//get all products
+		queryGetProducts = "SELECT distinct Product FROM JNKS_BUILDDATA";
+		var productResult = db.query(queryGetProducts);
+		for (var i = 0; i <productResult.length; i++)
+		{
+		    product = productResult[i].Product;
+		    if(product.equals("ask")){
+				continue;
+			}
+		    //get current status of product
+		    BuildStatus = getStatusOfProduct(product,lastTimeStamp);
+
+			//if BuildStatus is failed, get the duration of failure.
+			if(BuildStatus.equals("Success"))
+			{
+				//log.info(" last build successful");
+				durationOfFailure = "";
+				attachFailedComp="";
+				iconString = '<img src="https://cdn3.iconfinder.com/data/icons/fatcow/32/accept.png"> ';
+			}
+			else if(BuildStatus.equals("Failed"))
+			{
+				//log.info("last build unsuccessful");
+				
+					//log.info(" after last build unsuccessful");
+					attachFailedComp = failedComponents;
+
+					//attachUrl = url;
+					//log.info(attachUrl);
+					durationOfFailure = getFailureDuration(product,lastTimeStamp,BuildStatus);
+					iconString = '<img src="https://cdn4.iconfinder.com/data/icons/lingo/Stop.png"> ';
+					
+								
+			}	
+			else
+			{
+				//log.info("last build aborted");
+				durationOfFailure = "";
+				attachFailedComp = failedComponents;
+				iconString = '<img src="https://cdn1.iconfinder.com/data/icons/linecon/512/cross-32.png"> ';
+			}
+		var j=0;
+		var dayStatus=[];
+		var l=0;
+		for(var we=0;we<weekData.length;we++)
+		{
+			for(var t=0;t<weekData[we].length;t++)
+			{
+				j++;
+				if(product.equals(weekData[we][t][0]))
+				{
+					dayStatus[l] = weekData[we][t][1];
+				}
+			}
+			l++;
+		}	
+			
+		Data[i] = [product,dayStatus[6],dayStatus[5],dayStatus[4],dayStatus[3],dayStatus[2],dayStatus[1],iconString,attachFailedComp,durationOfFailure];			
+		}
+		return Data;
+	}
+
+//*****************************************************
+	//passing the product name and the timestamp, this function gives the status of it at that timestamp.
+	//this function iterates each product thorugh its components. if even one fails, the product fail
+
+	function getStatusOfProduct(product,timeStamp)
+	{	var buildStatus="null";
+		failedComponents="";
+		url = "";
+		queryCheckProductStatus = "select BuildStatus,Component from JNKS_BUILDDATA where Product='"+product+"' and Timestamp = '"+timeStamp+"'";
+		var productStatusResult = db.query(queryCheckProductStatus);
+		
+		
+			for (var j = 0; j < productStatusResult.length; j++) 
+			{
+				if((productStatusResult[j].BuildStatus).equals("Success"))
+				{
+					if((!buildStatus.equals("Failed")) && (!buildStatus.equals("Aborted")))
+					{
+						buildStatus = "Success";
+					}						
+				}
+				else if((productStatusResult[j].BuildStatus).equals("Failed"))
+				{
+					if((!buildStatus.equals("Aborted")))
+					{
+						buildStatus = "Failed";
+						failedComponents = failedComponents + "<a href = 'https://wso2.org/jenkins/job/"+productStatusResult[j].Component+"/lastFailedBuild/console'>"+productStatusResult[j].Component+"</a> , ";
+					}
+				}
+				else
+				{
+					buildStatus = "Aborted";
+					failedComponents = failedComponents + "<a href = 'https://wso2.org/jenkins/job/"+productStatusResult[j].Component+"/'>"+productStatusResult[j].Component+"</a> , ";
+				}	
+			}
+		if(buildStatus==null)
+		{
+			buildStatus="";
+		}
+		return buildStatus;
+	}
+//*****************************************************
+
+	function getFailureDuration(product,timestamp,status)
+	{
+		var dateString =[]
+		var T2="";
+		var index=1;
+		var prevTimestamp;
+
+		if(arrayTemp.length==1)
+		{
+			T2 = timestamp;
+		}
+
+		while((status=="Failed") && (index!=arrayTemp.length))
+		{	
+			index++;
+			prevTimestamp = arrayTemp[arrayTemp.length-index];	//prev timestamp
+			status = getStatusOfProduct(product,prevTimestamp);
+
+			T2 = prevTimestamp;
+
+			if(status=="Success")
+			{
+				T2 = arrayTemp[arrayTemp.length-(index-1)];
+				break;
+			}	
+		}
+		//get the timestamp when it first failed
+		fromDateString = ((T2.toString()).replace("-","/")).replace("-","/"); //2015-10-09 to 2015/10/09
+		fromDatePart = fromDateString.split(" ");
+		var dateObj = new Date(fromDatePart[0]);
+		var fromTimestamp = dateObj.toISOString();
+		log.info("fromTimestamp: "+fromTimestamp);
+
+		//if required to find duration from current time, use the following
+		var dat = new Date();
+		var nowString = dat.toISOString();
+
+		//if required to find duration from latest timestamp, use the following instead of the above
+/*		latestDateString = ((timestamp.toString()).replace("-","/")).replace("-","/"); //2015-10-09
+		latestDatePart = latestDateString.split(" ");
+		dateObj = new Date(latestDatePart[0]);
+		var toTimestamp = dateObj.toISOString();*/
+		
+		//convert strings into date objects
+		var fromDate = new Date(fromTimestamp.toString());
+		var toDate = new Date(nowString.toString());
+
+		//calculate the difference between the 2 dates/times
+		var difference =  toDate - fromDate;
+		
+		//Convert the difference to days/hours/minutes and seconds
+		var seconds = Math.floor((difference/1000)%60);
+		var minutes = Math.floor((difference/(1000*60))%60);
+		var hours = Math.floor((difference/(1000*60*60))%24);
+		var days = Math.floor(difference/(1000*60*60*24));
+
+		var duration = ""+days+" days, "+hours+" hours, "+minutes+" minutes, "+seconds+" seconds";
+		return duration;
+	}
+//*****************************************************
+	//returns an array of timestamps for a particular given date
+	
+	function getTimestamps()
+	{
+		var arrTimestamp = [];
+
+		var query = "select distinct Timestamp from JNKS_BUILDDATA order by Timestamp";
+		var result = db.query(query);
+		for (var c = 0; c < result.length; c++) 
+		{
+			arrTimestamp[c] = result[c].Timestamp;
+		}
+		return arrTimestamp;
+	}
+
+//*****************************************************
+
+	function getDataLast7Days(lastTimeStamp) 
+	{
+		var iconString="";
+		//var attachFailedComp="";
+		//var attachUrl="";
+		var DataLast7Days = [];
+		//get all products
+		queryGetProducts = "SELECT distinct Product FROM JNKS_BUILDDATA";
+		var productResult = db.query(queryGetProducts);
+		for (var i = 0; i <productResult.length; i++)
+		{
+		    product = productResult[i].Product;
+		    if(product.equals("undefined")){
+				continue;
+			}
+			//log.info("product is "+product);
+		    //get current status of product
+		    BuildStatus = getStatusOfProductLast7Days(product,lastTimeStamp);
+
+			//if BuildStatus is failed, get the duration of failure.
+			if(BuildStatus.equals("Success"))
+			{
+				//log.info(" last build successful");
+				iconString = '<img src="https://cdn3.iconfinder.com/data/icons/fatcow/32/accept.png"> ';
+				//Data[i] = [product,BuildStatus,durationOfFailure];
+				//durationOfFailure = "";
+			}
+			else if(BuildStatus.equals("Failed"))
+			{
+				//log.info("last build unsuccessful");
+				iconString = '<img src="https://cdn4.iconfinder.com/data/icons/lingo/Stop.png"> ';
+			}	
+			else if(BuildStatus.equals("Aborted"))
+			{
+				//log.info("last build aborted");
+				iconString = '<img src="https://cdn1.iconfinder.com/data/icons/linecon/512/cross-32.png"> ';
+			}
+			else
+			{
+				//log.info("last build null");
+				iconString = '';
+			}
+			DataLast7Days[i] = [product,iconString];		
+		}
+		return DataLast7Days;
+	}
+
+//*****************************************************
+
+	function getStatusOfProductLast7Days(product,timeStamp)
+	{	
+		var buildStatus="null";
+		queryCheckProductStatus = "select BuildStatus,Component from JNKS_BUILDDATA where Product='"+product+"' and Timestamp = '"+timeStamp+"'";
+		var productStatusResult = db.query(queryCheckProductStatus);
+		if(productStatusResult.length!=0)
+		{
+			for (var j = 0; j < productStatusResult.length; j++) 
+			{
+				//log.info("component is : "+productStatusResult[j].Component+" with status : "+productStatusResult[j].BuildStatus);
+				if((productStatusResult[j].BuildStatus).equals("Success"))
+				{
+					if((!buildStatus.equals("Failed")) && (!buildStatus.equals("Aborted")))
+					{
+						buildStatus = "Success";
+					}
+				}
+				else if((productStatusResult[j].BuildStatus).equals("Failed"))
+				{
+					if((!buildStatus.equals("Aborted")))
+					{
+						buildStatus = "Failed";
+					}
+				}
+				else if((productStatusResult[j].BuildStatus).equals("Aborted"))
+				{
+					buildStatus = "Aborted";
+				}	
+			}
+		}
+		else
+		{
+			buildStatus="null";
+		}
+
+		return buildStatus;
+	}
+
+var returnArray = {currentData:currentData,latestTimeStamp:latestTimeStamp,dateDays:dateDays};
+response.addHeader("Access-Control-Allow-Origin", "*");
+print(stringify(returnArray));
+
+%>

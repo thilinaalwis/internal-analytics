@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="JenkinsBuildTable" height="250" description="sub-JenkinsBuildTable">
+        <Require feature="pubsub-2">
+            <Param name="topics">
+                <![CDATA[
+                <Topic title="geodata"
+                    name="org.wso2.ues.samples2.ch"
+                    description="sample channel to demonstrate intergadget communication"
+                    type="object"
+                    subscribe="true"/>
+               ]]>
+            </Param>
+        </Require>
+        <Require feature="dynamic-height"/>
+    </ModulePrefs>
+    <Content type="html">
+        <![CDATA[
+        <head>
+
+<script src="/portal/js/jquery.min.js"></script>
+<script src="/portal/js/date.js"></script>
+<script language="javascript" type="text/javascript" src="/portal/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript">
+google.load('visualization', '1', {packages: ['table']});
+            //POST data to hosted jaggery files
+               $.post( "http://10.100.4.35:9763/hostedForGadgetsNew/DataJenkinsBuildTable.jag",{}, function( data ) {
+                
+                //Get the data from hosted jaggery files and parse it     
+                    var result = JSON.parse(data);
+                    //alert(result);
+                    drawVisualization(result["currentData"],result["latestTimeStamp"],result["dateDays"]);                           
+                });
+       
+ function drawVisualization(arrayData,time,dateDay) {
+
+		//arrayData.sort(compareSecondColumn);
+
+		function compareSecondColumn(a, b) {
+		    if (a[5] === b[5]) {
+		        return 0;
+		    }
+		    else {
+		        return (a[5] > b[5]) ? -5 : 5;
+		    }
+		}
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Product');
+data.addColumn('string', dateDay[6]);
+data.addColumn('string', dateDay[5]);
+data.addColumn('string', dateDay[4]);
+data.addColumn('string', dateDay[3]);
+data.addColumn('string', dateDay[2]);
+data.addColumn('string', dateDay[1]);
+data.addColumn('string', 'Status at :  '+time);
+data.addColumn('string', 'Failed components');
+data.addColumn('string', 'Duration since last failure');
+
+
+
+for(var i=0;i<arrayData.length;i++)
+{
+	data.addRows([arrayData[i]]);
+	
+}
+var StyleRows = {tableRow: 'StyleRows'} ;
+var options = {		'title':'jenkins build',
+                    'width':'90%',
+                    'height':'100%',
+                 	'allowHtml': 'true',
+                 	'cssClassNames': 'StyleRows'
+             };
+
+visualization = new google.visualization.Table(document.getElementById('table'));
+visualization.draw(data,options);
+google.setOnLoadCallback(drawVisualization);
+}
+</script>
+
+        </head>
+        <body padding="0px">          
+	
+<div id="table" align="center">
+</div>
+
+            </body>
+        ]]>
+    </Content>
+</Module>
