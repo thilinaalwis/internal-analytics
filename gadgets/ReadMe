@@ -1,0 +1,17 @@
+
+We use WSO2DAS and Jaggery Server to host our gadgets. 
+
+To Deploy a gadget, place the gadget folder (eg:JenkinsBuildTable) in the following location: 
+<wso2das home>/<repository>/<deployment>/<server>/<jaggery apps>/<portal>/<store>/<carbon.super>/<gadget>
+
+Create a directory inside the <jaggery home>/<apps> location and name it 'hostedForGadgets'. 
+Then Place the DataJenkinsBuildTable.jag file inside it.
+
+Run both servers and visit the DAS dashboard at: https://localhost:9445/portal/
+(Here the port is 9445 because the DAS server has been run on a port offset of 2)
+
+Use 'admin' as the username and password to login to the dashboard.
+
+Create a dashboard and drag and drop the gadget into the dashboard and click on 'Preview'.
+Enable option to load insecure script.
+This would display the gadget in the dashboard!
