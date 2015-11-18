@@ -1,4 +1,5 @@
 Salesforce Account
+///////comment
 
 CREATE TABLE `SF_ACCOUNT` (
   `_timestamp` mediumtext,
