@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SimpleProxyLineItems" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <salesforce.getUserInformation configKey="sf_auth"/>
+      <salesforce.describeGlobal/>
+      <salesforce.query>
+        <batchSize>2000</batchSize>
+        <queryString>SELECT Id, LastModifiedDate,Support_Account_ID__c, Dev_Support_Hours__c, Line_Item_Customer__c FROM Line_Item__c WHERE Support_Account_ID__c != 'NULL' AND Support_Account_ID__c != '' ORDER BY LastModifiedDate DESC NULLS FIRST</queryString>
+      </salesforce.query>
+      <log level="full"/>
+      <iterate expression="//abc:records" id="iterater10d"
+        sequential="true" xmlns:abc="urn:partner.soap.sforce.com">
+        <target>
+          <sequence>
+            <publishEvent>
+              <eventSink>EventSink12</eventSink>
+              <streamName>PublishEventStreamLineItem_1</streamName>
+              <streamVersion>1.0.1</streamVersion>
+              <attributes>
+                <meta/>
+                <correlation/>
+                <payload>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Id, 1, number(not(contains(//sf:Id,'sf:'))) * string-length(//sf:Id))"
+                    name="Id" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:LastModifiedDate, 1, number(not(contains(//sf:LastModifiedDate,'sf:'))) * string-length(//sf:LastModifiedDate))"
+                    name="LastModifiedDate" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Support_Account_ID__c, 1, number(not(contains(//sf:Support_Account_ID__c,'sf:'))) * string-length(//sf:Support_Account_ID__c))"
+                    name="Support_Account_ID__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Dev_Support_Hours__c, 1, number(not(contains(//sf:Dev_Support_Hours__c,'sf:'))) * string-length(//sf:Dev_Support_Hours__c))"
+                    name="Dev_Support_Hours__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                  <attribute defaultValue=""
+                    expression="substring(//sf:Line_Item_Customer__c, 1, number(not(contains(//sf:Line_Item_Customer__c,'sf:'))) * string-length(//sf:Line_Item_Customer__c))"
+                    name="Line_Item_Customer__c" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                </payload>
+                <arbitrary/>
+              </attributes>
+            </publishEvent>
+          </sequence>
+        </target>
+      </iterate>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </target>
+</proxy>
