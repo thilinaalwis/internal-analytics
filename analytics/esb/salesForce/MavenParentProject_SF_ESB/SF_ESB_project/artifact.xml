@@ -17,4 +17,7 @@
     <artifact name="RedmineConnectorTestProxy" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/RedmineConnectorTestProxy.xml</file>
     </artifact>
+    <artifact name="SimpleProxyLineItems" groupId="com.example.SF_ESB_project.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SimpleProxyLineItems.xml</file>
+    </artifact>
 </artifacts>
