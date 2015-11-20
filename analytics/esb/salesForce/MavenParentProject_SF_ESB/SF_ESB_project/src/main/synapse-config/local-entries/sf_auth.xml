@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <localEntry key="sf_auth" xmlns="http://ws.apache.org/ns/synapse">
   <salesforce.init>
-    <username>seshika@wso2.com</username>
-    <password>p1ne@ppleltVTVi5JQ7gILgQxxPgnjQVl</password>
-    <loginUrl>https://login.salesforce.com/services/Soap/u/27.0</loginUrl>
+    <username>**</username>
+    <password>**</password>
+    <loginUrl>**</loginUrl>
   </salesforce.init>
 </localEntry>
