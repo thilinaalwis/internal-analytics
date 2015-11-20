@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server hostname="localhost" id="WSO2 Carbon 4.4 based server at localhost" name="WSO2 Carbon 4.4 based server at localhost" runtime-id="WSO2 Carbon 4.4 based server" server-type="org.wso2.developerstudio.eclipse.carbon.server44" server-type-id="org.wso2.developerstudio.eclipse.carbon.server44" start-timeout="600" stop-timeout="15" timestamp="25">
+  <map carbon.browser="true" carbon.debug="5001" carbon.hotupdate="false" carbon.http="9763" carbon.https="9443" carbon.offset="30" esb.password="admin" esb.username="admin" key="generic_server_instance_properties" osgi.console="false" synapse.transport.http="8280" synapse.transport.https="8243"/>
+  <list key="modules"/>
+  <list key="Generic_Server_Modules_List"/>
+</server>
