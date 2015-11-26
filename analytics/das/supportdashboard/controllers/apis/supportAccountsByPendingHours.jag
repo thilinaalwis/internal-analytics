@@ -1,0 +1,6 @@
+<%
+var db = new Database("jdbc:mysql://192.168.8.35/sf", "sf", "sf!23");
+var query = "SELECT Line_Item_Customer__c,Support_Account_ID__c,SUM(Dev_Support_hours__c) FROM sf.SF_LINE_ITEM GROUP BY Support_Account_ID__c";
+var productResult = db.query(query);
+print(productResult);
+%>

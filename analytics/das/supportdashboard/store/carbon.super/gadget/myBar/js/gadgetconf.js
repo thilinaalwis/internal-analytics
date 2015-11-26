@@ -1,0 +1,1 @@
+var gadgetConfig ={"id":"myBar","title":"myBar","datasource":"country:1.0.0","type":"realtime","columns":[{"name":"TIMESTAMP","type":"time"},{"name":"gdp","type":"int"}],"maxUpdateValue":10,"chartConfig":{"yAxis":1,"xAxis":0,"chartType":"bar"}};

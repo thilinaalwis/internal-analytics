@@ -1,0 +1,10 @@
+{
+    "id": "support-accounts-by-pending-hours",
+    "title": "Support Accounts By Pending Hours",
+    "type": "gadget",
+    "thumbnail": "store://gadget/support-accounts-by-pending-hours/index.png",
+    "data": {
+        "url": "store://gadget/support-accounts-by-pending-hours/index.xml"
+    },
+    "description": "Allows to view pending hours for each support account"
+}
