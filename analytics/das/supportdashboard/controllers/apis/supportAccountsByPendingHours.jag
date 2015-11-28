@@ -1,6 +1,44 @@
 <%
-var db = new Database("jdbc:mysql://192.168.8.35/sf", "sf", "sf!23");
-var query = "SELECT Line_Item_Customer__c,Support_Account_ID__c,SUM(Dev_Support_hours__c) FROM sf.SF_LINE_ITEM GROUP BY Support_Account_ID__c";
-var productResult = db.query(query);
-print(productResult);
+var db = new Database("jdbc:mysql://192.168.57.40/UnifiedDashboards", "cioadmin", "cioadmin123");
+var salseforceDataQuery = "SELECT Line_Item_Customer__c,Support_Account_ID__c,SUM(Dev_Support_hours__c) FROM UnifiedDashboards.SF_LINE_ITEM GROUP BY Support_Account_ID__c";
+var supportJiraDataQuery = "SELECT * FROM UnifiedDashboards.SUPJ_Project_Time_Consumption";
+
+
+var getData = "SELECT projectKey,hoursConsumed,SUM(Dev_Support_Hours__c) AS Dev_Support_hours,Line_Item_Customer__c, (SUM" +
+        "(Dev_Support_Hours__c)- hoursConsumed) AS pending_hours FROM UnifiedDashboards" +
+        ".SUPJ_Project_Time_Consumption,  UnifiedDashboards.SF_LINE_ITEM WHERE" +
+        " UnifiedDashboards.SUPJ_Project_Time_Consumption.projectKey = UnifiedDashboards.SF_LINE_ITEM.Support_Account_ID__c " +
+        "GROUP BY projectKey ORDER BY pending_hours DESC;";
+
+var salseforceResult = db.query(salseforceDataQuery);
+var jiraResult = db.query(supportJiraDataQuery);
+var allData = db.query(getData);
+
+var jiraResultLength=jiraResult.length;
+var sfResultLength=salseforceResult.length;
+
+
+function returnAllData(){
+    print(allData);
+    return allData;
+}
+
+function getSupportIds(){
+    var sfSupportIdArray=[];
+    var jiraSupportIdArray=[];
+
+    for(var i=0 ; i<sfResultLength; i++){
+        var sfSupportId=salseforceResult[i]['Support_Account_ID__c'];
+        sfSupportIdArray.push(sfSupportId);
+    }
+
+    for(var i=0 ; i<jiraResultLength; i++){
+        var jiraSupportId=jiraResult[i]['projectKey'];
+        jiraSupportIdArray.push(jiraSupportId);
+    }
+    print(jiraSupportIdArray);
+    return jiraSupportIdArray;
+}
+returnAllData();
+
 %>
