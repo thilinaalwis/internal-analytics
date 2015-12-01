@@ -1,0 +1,57 @@
+<%
+
+var database = new Database("DAS_DATA_SOURCE");
+var action = request.getParameter("action");
+
+
+function getCorrelatedSfJiraData(){
+    var queryCorrelatedSfJiraData = "SELECT projectKey,hoursConsumed,SUM(Dev_Support_Hours__c) AS Dev_Support_hours," +
+            "Line_Item_Customer__c, (SUM" +
+            "(Dev_Support_Hours__c)- hoursConsumed) AS pending_hours FROM UnifiedDashboards" +
+            ".SUPJ_Project_Time_Consumption,  UnifiedDashboards.SF_LINE_ITEM WHERE" +
+            " UnifiedDashboards.SUPJ_Project_Time_Consumption.projectKey = UnifiedDashboards.SF_LINE_ITEM.Support_Account_ID__c " +
+            "GROUP BY projectKey ORDER BY pending_hours DESC;";
+
+    var CorrelatedSfJiraData = database.query(queryCorrelatedSfJiraData);
+    print(CorrelatedSfJiraData);
+    return CorrelatedSfJiraData;
+
+}
+
+function test(){
+
+}
+
+if(action === "getCorrelatedSfJiraData"){
+    getCorrelatedSfJiraData();
+}
+
+
+
+/**
+//mail sending part
+var content = request.getParameter("cont");
+var to = new Array();
+to[0] = "xxx@xxx.com";
+to[1] = "xxx@xxx.com";
+var subject = request.getParameter("sub");
+
+var email = require('email');
+
+var sender = new email.Sender("xxx@xxx.com", "25", "xxx@xxx.com", "xxx", "tls");
+
+sender.from = "xxx@xxx.com";
+sender.to = to;
+sender.cc = "";
+sender.bcc = "";
+sender.subject = "Remaining support hours for the AccountID: testDEV is less than 15.";
+sender.text = content;
+sender.send();
+
+print("email successfully sent to " + to);
+//end of mail sending part
+*/
+
+
+
+%>
