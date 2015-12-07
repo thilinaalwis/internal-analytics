@@ -1,0 +1,19 @@
+<%
+    var db = new Database("jdbc:mysql://localhost:3306/test", "root", "");
+    var action = request.getParameter("action");
+
+
+    function getRecords()
+    {
+
+    var result = db.query("select  DISTINCT project.Project_id,Project_Name,version_name,due_date,status from project,version where project.Project_id=version.project_id and date(version._timestamp)=CURDATE();");
+
+        print(result);
+        return result;
+    }
+
+     getRecords();
+
+ %>
+
+

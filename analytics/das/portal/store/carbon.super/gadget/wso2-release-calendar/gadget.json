@@ -1,0 +1,10 @@
+{
+    "id": "test",
+    "title": "WSO2 Release Calendar",
+    "type": "gadget",
+    "thumbnail": "store://gadget/wso2-release-calendar/index.png",
+    "data": {
+        "url": "store://gadget/wso2-release-calendar/index.xml"
+    },
+    "description": "Allows to view release dates"
+}
