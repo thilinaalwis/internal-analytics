@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-5.1.29">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../salesforce_project/cep/wso2cep-4.0.0-SNAPSHOT/repository/components/lib/mysql-connector-java-5.1.29.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
