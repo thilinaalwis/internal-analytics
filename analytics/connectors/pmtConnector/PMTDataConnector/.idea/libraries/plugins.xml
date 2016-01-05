@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="plugins">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins" recursive="false" />
+  </library>
+</component>
