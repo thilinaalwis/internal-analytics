@@ -1,0 +1,140 @@
+/* Enter a unique ExecutionPlan */
+@Plan:name('SurvivorModelExecutionPlan')
+
+/* Enter a unique description for ExecutionPlan */
+-- @Plan:description('ExecutionPlan')
+
+/* define streams/tables and write queries here ... */
+
+@Import('outStreamBeforePrediction:1.0.0')
+define stream outStreamBeforePrediction (RegionCat string, TitleCat string, RLMaxTitle string, Act1_rate double, Act2_rate double, Act3_rate double, Act4_rate double, Act5_rate double, Act6_rate double, AccntAct_rate double);
+
+@Export('SurvivalProbabilityStream:1.0.0')
+define stream probabilityStream (before4weeks double, before8weeks double, before12weeks double, before16weeks double, before20weeks double, before24weeks double, before28weeks double, before32weeks double, before36weeks double, before40weeks double, before44weeks double, before48weeks double);
+
+@From(eventtable='rdbms', jdbc.url='jdbc:mysql://localhost:3306/cepdb', username='root', password='123', driver.name='com.mysql.jdbc.Driver', table.name='thetaValues')
+define table thetaTable (theta1 double, theta2 double);
+
+from outStreamBeforePrediction
+select 161.2024 as intercept, (-5.8765) as NAM, 10.1989 as ROW, 1.0 as EUROPE, 1.0 as Title1, (-13.9041) as Title2, (-23.9978) as Title3, (-18.8864) as Title4, 1.0 as MaxTitle1, (-13.9282) as MaxTitle2, 
+(-21.7132) as MaxTitle3, (-19.1424) as MaxTitle4, (-11.3935) as Act1rate, (-2.8619) as Act2rate,
+(-2.2062) as Act3rate, (-17.3928) as Act4rate, 19.8432 as Act5rate, (-35.4525) as Act6rate, (-0.6294) as CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream;
+
+
+/* RegionCat filtering */
+from CoeficientStream [RegionCat == 'NAM']
+select  intercept,  NAM, 0.0 as ROW, 0.0 as EUROPE, Title1, Title2, Title3, Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream1;
+
+
+from CoeficientStream [RegionCat == 'ROW']
+select  intercept, 0.0 as NAM, ROW, 0.0 as EUROPE, Title1, Title2, Title3, Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream1;
+
+from CoeficientStream[RegionCat == 'EUROPE']
+select  intercept,0.0 as NAM, 0.0 as ROW, EUROPE, Title1, Title2, Title3, Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream1;
+
+/* TitleCat filtering */
+
+from CoeficientStream1[TitleCat == '1']
+select intercept, NAM, ROW, EUROPE, 1.0 as Title1, 0.0 as Title2, 0.0 as Title3, 0.0 as Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate,RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream2;
+
+
+from CoeficientStream1[TitleCat == '2']
+select intercept, NAM, ROW, EUROPE, 0.0 as Title1, Title2, 0.0 as Title3, 0.0 as Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream2;
+
+from CoeficientStream1[TitleCat == '3']
+select intercept, NAM, ROW, EUROPE, 0.0 as Title1, 0.0 as Title2, Title3, 0.0 as Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream2;
+
+from CoeficientStream1[TitleCat == '4']
+select intercept, NAM, ROW, EUROPE, 0.0 as Title1, 0.0 as Title2, 0.0 as Title3, Title4, MaxTitle1, MaxTitle2, MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate, RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream2;
+
+/* RLMaxTitle filtering */
+
+from CoeficientStream2[RLMaxTitle == '1']
+select intercept, NAM, ROW, EUROPE, Title1, Title2, Title3, Title4, MaxTitle1, 0.0 as MaxTitle2, 0.0 as MaxTitle3, 0.0 as MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate,  RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream3;
+
+from CoeficientStream2[RLMaxTitle == '2']
+select intercept, NAM, ROW, EUROPE, Title1, Title2, Title3, Title4, 0.0 as MaxTitle1, MaxTitle2, 0.0 as MaxTitle3, 0.0 as MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate,  RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream3;
+
+from CoeficientStream2[RLMaxTitle == '3']
+select intercept, NAM, ROW, EUROPE, Title1, Title2, Title3, Title4, 0.0 as MaxTitle1, 0.0 as MaxTitle2, MaxTitle3, 0.0 as MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate,  RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream3;
+
+from CoeficientStream2[RLMaxTitle == '4']
+select intercept, NAM, ROW, EUROPE, Title1, Title2, Title3, Title4, 0.0 as MaxTitle1, 0.0 as MaxTitle2, 0.0 as MaxTitle3, MaxTitle4, Act1rate, Act2rate,
+Act3rate, Act4rate, Act5rate, Act6rate, CompActrate,  RegionCat, TitleCat, RLMaxTitle, Act1_rate, Act2_rate,Act3_rate,Act4_rate,Act5_rate,Act6_rate, AccntAct_rate
+insert into CoeficientStream3;
+
+/* Activity Rates filtering */
+
+from CoeficientStream3
+select intercept, NAM, ROW, EUROPE, Title1, Title2, Title3, Title4, 0.0 as MaxTitle1, 0.0 as MaxTitle2, 0.0 as MaxTitle3, MaxTitle4, (Act1_rate*Act1rate) as Act1rate, (Act2_rate*Act2rate) as Act2rate,
+(Act3_rate*Act3rate) as Act3rate, (Act4_rate*Act4rate) as Act4rate, (Act5_rate*Act5rate) as Act5rate, (Act6_rate*Act6rate) as Act6rate, (AccntAct_rate*CompActrate) as CompActrate
+insert into CoeficientStream4;
+
+
+
+/* gamma*Z calculation */
+
+from CoeficientStream4 
+select (intercept + NAM + ROW + EUROPE + Title1 + Title2 + Title3 + Title4 + MaxTitle1 + MaxTitle2 + MaxTitle3 + MaxTitle4 + Act1rate + Act2rate + Act3rate + Act4rate + Act5rate + Act6rate + CompActrate) as GammaZ
+insert into GammaZStream;
+
+from GammaZStream join thetaTable
+select math:exp((GammaZ)*(-1)) as expGammaZ, theta1, theta2
+insert into expGammaZStream;
+
+
+/* survial values */
+
+from expGammaZStream
+select 1/(1+math:power((expGammaZ * 4),theta2) * theta1) as survival4,
+1/(1+math:power((expGammaZ * 8),theta2) * theta1) as survival8,
+1/(1+math:power((expGammaZ * 12),theta2) * theta1) as survival12,
+1/(1+math:power((expGammaZ * 16),theta2) * theta1) as survival16,
+1/(1+math:power((expGammaZ * 20),theta2) * theta1) as survival20,
+1/(1+math:power((expGammaZ * 24),theta2) * theta1) as survival24,
+1/(1+math:power((expGammaZ * 28),theta2) * theta1) as survival28,
+1/(1+math:power((expGammaZ * 32),theta2) * theta1) as survival32,
+1/(1+math:power((expGammaZ * 36),theta2) * theta1) as survival36,
+1/(1+math:power((expGammaZ * 40),theta2) * theta1) as survival40,
+1/(1+math:power((expGammaZ * 44),theta2) * theta1) as survival44,
+1/(1+math:power((expGammaZ * 48),theta2) * theta1) as survival48
+insert into survivalStream;
+
+
+/* probability of getting banted before */
+
+from survivalStream 
+select (1 - survival4) as before4weeks,
+(1 - survival8) as before8weeks,
+(1 - survival12) as before12weeks,
+(1 - survival16) as before16weeks,
+(1 - survival20) as before20weeks,
+(1 - survival24) as before24weeks,
+(1 - survival28) as before28weeks,
+(1 - survival32) as before32weeks,
+(1 - survival36) as before36weeks,
+(1 - survival40) as before40weeks,
+(1 - survival44) as before44weeks,
+(1 - survival48) as before48weeks
+insert into probabilityStream;

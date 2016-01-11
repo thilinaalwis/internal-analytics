@@ -1,0 +1,56 @@
+{
+  "name": "SurvivalProbabilityStream",
+  "version": "1.0.0",
+  "nickName": "",
+  "description": "",
+  "payloadData": [
+    {
+      "name": "before4weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before8weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before12weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before16weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before20weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before24weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before28weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before32weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before36weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before40weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before44weeks",
+      "type": "DOUBLE"
+    },
+    {
+      "name": "before48weeks",
+      "type": "DOUBLE"
+    }
+  ]
+}
