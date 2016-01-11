@@ -1,0 +1,13 @@
+{
+    "id": "JenkinsBuildData",
+    "title": "Jenkins Build Data",
+    "type": "gadget",
+    "thumbnail": "store://gadget/JenkinsBuildDataTable/index.png",
+    "data": {
+        "url": "store://gadget/JenkinsBuildDataTable/index.xml"
+    },
+    "listen": {
+
+            "description": "Jenkins build details of each products for last 7 days."        
+    }
+}

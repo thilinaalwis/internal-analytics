@@ -1,0 +1,325 @@
+<%
+var db = new Database("jdbc:mysql://192.168.8.35/sf", "sf", "sf!23");
+var action = request.getParameter("action");
+
+var distictProductArray = []; // Array to store all distinct products
+var lastTimestampArray = []; // This array stores last timestamp of each day
+var failedDetailsArray = []; // This array stores failed components and failed duration since last failed
+var monthlyWeather = []; // This array stores last month's failed components' percentage as weather report
+var weeklyWeather = []; // This array stores last week's failed components' percentage as weather report
+var productDictionary = {}; // Dictionary to store product details
+var last7DaysDictionary = {}; // Dictionary to store last 7 days product details (key ==> :Timestamp value ==> :BuildStatus)
+var failedComponentDictionary = {}; // Dictionary to store last 7 days products component details (key ==> :Timestamp value ==> :FailedComponents)
+
+
+var products = distictProductArray;
+
+
+//Query to get Product, Timestamp and build status for last month
+queryGetJenkinsBuildData = "SELECT  Product,DATE_FORMAT(Timestamp, '%Y/%m/%d %T') as Timestamp, BuildStatus FROM JNKS_BUILDDATA WHERE timestamp >= (CURDATE() - INTERVAL 30 DAY) and Product != 'unknown' and Product != 'Research'";
+var buildResult = db.query(queryGetJenkinsBuildData);
+
+//get distinct products into an array
+function getDistinctProducts() {
+	//query to get all distinct products
+	queryGetProducts = "select  DISTINCT Product from JNKS_BUILDDATA WHERE Product != 'AS/Carbon' and Product != 'Carbon-Parent' and Product != 'unknown' and Product != 'Research'";
+	var productResult = db.query(queryGetProducts);
+	for (var p = 0; p < productResult.length; p++) {
+		var valueProduct = productResult[p]['Product'];
+		productDictionary[valueProduct] = {}; // Creating Dictionary for each product ==> {"APIM" : {}, "ESB" : {}..............}
+		last7DaysDictionary[valueProduct] = {}; // Creating Dictionary for each product for last 7 days build status ==> {"APIM" : {}, "ESB" : {}..............}
+		failedComponentDictionary[valueProduct] = {};
+		distictProductArray.push(valueProduct);
+	}
+	return distictProductArray;
+}
+
+//get all the product details
+//this function iterates each product thorugh its components' build status, if even one fails, the product is failed
+function getJenkinsBuildData() {
+	for (var n = 0; n < products.length; n++) { 			//Iterates through each product
+		for (var i = 0; i < buildResult.length; i++) {
+			if (buildResult[i]['Product'] == products[n]) {
+				var valueTimeStamp = buildResult[i]['Timestamp'];
+				if (valueTimeStamp in productDictionary[products[n]]) {
+					if (buildResult[i]['BuildStatus'] == 'Failed') {
+						productDictionary[products[n]][valueTimeStamp] = 'Failed';
+					} else if (buildResult[i]['BuildStatus'] == 'Aborted') {
+						productDictionary[products[n]][valueTimeStamp] = 'Aborted';
+					}
+				} else {
+					productDictionary[products[n]][valueTimeStamp] = buildResult[i]['BuildStatus'];
+				}
+			} else {
+				continue;
+			}
+		}
+	}
+	//print(productDictionary)
+	return productDictionary;
+}
+
+//get last 7 days build status on last timestamp of each day
+function getlast7DaysBuildData() {
+	//Query to get las 7 day's last timestamp of each product
+	queryGetLast7DaysTimestamps = "SELECT  Product, DATE_FORMAT(MAX(Timestamp), '%Y/%m/%d %T') AS Last_Timestamp FROM JNKS_BUILDDATA WHERE Timestamp BETWEEN DATE_SUB(NOW(),INTERVAL 7 DAY) and NOW() GROUP BY  Product, DATE(Timestamp)";
+	var Last7DaysTimestamps = db.query(queryGetLast7DaysTimestamps);
+
+	for (var n = 0; n < products.length; n++) {
+		for (var i = 0; i < Last7DaysTimestamps.length; i++) {
+			if (Last7DaysTimestamps[i]['Product'] == products[n]){
+				var valueLastTimestamps = Last7DaysTimestamps[i]['Last_Timestamp'];
+				last7DaysDictionary[products[n]][valueLastTimestamps] = productDictionary[products[n]][valueLastTimestamps]; //"APIM" : {"2016/01/04 23:00:00" : "Success",......}
+			}else {
+				continue;
+			}
+		}
+	}
+	//print(last7DaysDictionary);
+	return last7DaysDictionary;
+}
+
+// This function gets the failed components for last 7 days build
+function getFailedComponents(){
+
+	var failedComponents = " ";
+
+	for (var n = 0; n < products.length; n++) {
+		var count = Object.keys(last7DaysDictionary[products[n]]).length;
+		for (var i = 0; i < count; i++) {
+			var failedComponentArr =[]; // This array stores the failed and aborted components of each last timestamp of the day
+			var valueTimestamp = [Object.keys(last7DaysDictionary[products[n]])[i]];
+			var valueProduct = products[n];
+			var BuildStatus = last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[i]];
+
+			if (BuildStatus == 'Failed' ) {
+				//Query to get failed components
+				queryGetFailedComponent = "select Component from JNKS_BUILDDATA where Product='" + valueProduct + "' and Timestamp = '" + valueTimestamp + "'and BuildStatus = 'Failed'";
+				var failedComponentResult = db.query(queryGetFailedComponent);
+
+				for(var j=0; j<failedComponentResult.length; j++){
+					failedComponentArr.push(failedComponentResult[j].Component);
+				}
+			} else if (BuildStatus == 'Aborted') {
+				//Query to get aborted components
+				queryGetFailedComponent = "select Component from JNKS_BUILDDATA where Product='" + valueProduct + "' and Timestamp = '" + valueTimestamp + "'and BuildStatus = 'Aborted'";
+				var failedComponentResult = db.query(queryGetFailedComponent);
+
+				for(var j=0; j<failedComponentResult.length; j++){
+					failedComponentArr.push(failedComponentResult[j].Component);
+				}
+			} else {
+				failedComponentArr.push("&nbsp");
+			}
+			failedComponentDictionary[products[n]][valueTimestamp]=failedComponentArr;
+		}
+	}
+	//print(failedComponentDictionary)
+	return failedComponentDictionary;
+}
+
+
+// This function gets the failed components and failed duration if the current build status is Failed or Aborted
+function getFailedProductDetails() {
+
+	var failedComponents = "";
+	var duration = ""
+
+	for (var n = 0; n < products.length; n++) {
+		var failedComponentArr =[]; // This array stores the failed and aborted components of current timestamp
+		var count = Object.keys(productDictionary[products[n]]).length;
+
+		//checking the build status of the last timestamp
+		if (productDictionary[products[n]][Object.keys(productDictionary[products[n]])[count - 1]] == 'Failed') { //
+
+			var lastfailedTimestamp = [Object.keys(productDictionary[products[n]])[count - 1]];
+			var lastFailedProduct = products[n];
+
+			//Query to get failed components
+			queryGetFailedComponent = "select Component from JNKS_BUILDDATA where Product='" + lastFailedProduct + "' and Timestamp = '" + lastfailedTimestamp + "'and BuildStatus = 'Failed'";
+			var failedComponentResult = db.query(queryGetFailedComponent);
+			for(var i=0; i<failedComponentResult.length; i++){
+				failedComponentArr.push( " <a href = 'https://wso2.org/jenkins/job/" + failedComponentResult[i].Component + "/lastFailedBuild/console'>" + failedComponentResult[i].Component + "</a> ");
+			}
+
+			while (productDictionary[products[n]][Object.keys(productDictionary[products[n]])[count - 1]] == 'Failed') {
+				var firstTimeFailed = [Object.keys(productDictionary[products[n]])[count - 1]];
+				count--;
+			}
+
+			var fromDate = Date.parse(firstTimeFailed);
+			var d = new Date(); // today!
+			var today = Date.parse(d);
+			//calculate the difference between the 2 dates/times
+			var difference = today - fromDate;
+			//Convert the difference to days/hours/minutes and seconds
+			var seconds = Math.floor((difference / 1000) % 60);
+			var minutes = Math.floor((difference / (1000 * 60)) % 60);
+			var hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+			var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+			var duration = "" + days + " d " + hours + " h " + minutes + " m " + seconds + " s";
+
+		} else if (productDictionary[products[n]][Object.keys(productDictionary[products[n]])[count - 1]] == 'Aborted') {
+
+			duration = " n/a ";
+			var lastfailedTimestamp = [Object.keys(productDictionary[products[n]])[count - 1]];
+			var lastFailedProduct = products[n];
+
+			//Query to get aborted components
+			queryGetFailedComponent = "select Component from JNKS_BUILDDATA where Product='" + lastFailedProduct + "' and Timestamp = '" + lastfailedTimestamp + "'and BuildStatus = 'Aborted'";
+			var failedComponentResult = db.query(queryGetFailedComponent);
+			for(var i=0; i<failedComponentResult.length; i++){
+				failedComponentArr.push(" <a href = 'https://wso2.org/jenkins/job/" + failedComponentResult[i].Component + "/'>" + failedComponentResult[i].Component + "</a> ");
+			}
+		} else {
+			lastFailedProduct = products[n];
+			duration = " n/a ";
+			failedComponentArr.push(" n/a ");
+		}
+
+		var failedArray = {
+			Product: lastFailedProduct,
+			Component: failedComponentArr,
+			Duration: duration
+		};
+		//print(failedComponentArr)
+		failedDetailsArray.push(failedArray);
+	}
+	//print(failedDetailsArray);
+	return failedDetailsArray;
+}
+
+// This function calculates the build success percentage of last month
+function getLastMonthWhetherReport() {
+	var weather = " ";
+
+	for (var n = 0; n < products.length; n++) {
+		var successCount = 0;
+		var componentCount = 0;
+		for (var i = 0; i < buildResult.length; i++) {
+			if (buildResult[i]['Product'] == products[n]) {
+				componentCount++;
+				if (buildResult[i]['BuildStatus'] == 'Success') {
+					successCount++;
+				} else {
+					continue;
+				}
+			}
+		}
+		weatherReport(successCount, componentCount);
+		var weatherArray = {
+			Weather: wheather,
+			Percentage: WeatherPercentage
+		};
+
+		monthlyWeather.push(weatherArray);
+	}
+	return (monthlyWeather);
+}
+
+// This function calculates the build success percentage of last 7 days
+function getLastWeekWhetherReport() {
+	var weather = " ";
+
+	var today = new Date(); //today
+	today.setDate(today.getDate() - 7); //day before 7 days
+
+	function filterByTimestamp(obj) { //
+		if (Date.parse(obj.Timestamp) > today) {
+			return true;
+		}
+	}
+	var last7DaysBuildResult = buildResult.filter(filterByTimestamp);
+
+	for (var n = 0; n < products.length; n++) {
+
+		var successCount = 0;
+		var componentCount = 0;
+		for (var i = 0; i < last7DaysBuildResult.length; i++) {
+
+			if (last7DaysBuildResult[i]['Product'] == products[n]) {
+				componentCount++;
+				if (last7DaysBuildResult[i]['BuildStatus'] == 'Success') {
+					successCount++;
+				} else {
+					continue;
+				}
+			}
+		}
+
+		weatherReport(successCount, componentCount);
+
+		var weatherArray = {
+			Weather: wheather,
+			Percentage: WeatherPercentage
+		};
+
+		weeklyWeather.push(weatherArray);
+	}
+
+	return (weeklyWeather);
+
+}
+
+// This function calculates the success percentage of builds' for the assigned period.
+function weatherReport(successCount, componentCount) {
+
+	WeatherPercentage = (successCount / componentCount * 100);
+
+	if (WeatherPercentage == 100) {
+		wheather = "Sunny";
+	} else if (WeatherPercentage >= 80) {
+		wheather = "PartlyCloudy";
+	} else if (WeatherPercentage >= 60) {
+		wheather = "Cloudy";
+	} else if (WeatherPercentage >= 20) {
+		wheather = "Rainy";
+	} else if (WeatherPercentage >= 0) {
+		wheather = "Stormy";
+	}
+	//print(WeatherPercentage)
+	return (WeatherPercentage);
+	return (wheather);
+}
+
+
+//this function take all data into one array that needs to be passed to the gadget
+function getData() {
+	getDistinctProducts();
+	getJenkinsBuildData();
+	getlast7DaysBuildData();
+	getFailedProductDetails();
+	getLastMonthWhetherReport();
+	getLastWeekWhetherReport();
+	getFailedComponents();
+
+	var returnAray = []; // This array stores all data that returns to gadget
+	for (var n = 0; n < products.length; n++) {
+		var returnData = {
+			product: products[n],
+			Day01: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[0]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[0]]},
+			Day02: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[1]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[1]]},
+			Day03: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[2]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[2]]},
+			Day04: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[3]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[3]]},
+			Day05: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[4]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[4]]},
+			Day06: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[5]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[5]]},
+			Day07: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[6]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[6]]},
+			Current: { Status:last7DaysDictionary[products[n]][Object.keys(last7DaysDictionary[products[n]])[7]],Component:failedComponentDictionary[products[n]][Object.keys(failedComponentDictionary[products[n]])[7]]},
+			MonthlyWeather: monthlyWeather[n],
+			WeeklyWeather: weeklyWeather[n],
+			FailedDetails: failedDetailsArray[n]
+		};
+		returnAray.push(returnData);
+	}
+
+	print(returnAray);
+	return returnAray;
+}
+//getData();
+
+if (action === "getData") {
+	getData();
+}
+
+%>
