@@ -1,0 +1,2 @@
+This is the plugin used to enable SSO for Confluence. 
+Install the plugin using the install.sh file found in the out folder. Further instructions can be found in the README file inside the plugin folder 
