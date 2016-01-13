@@ -1,9 +1,0 @@
-{
-    "store": {
-        "type": "fs"
-    },
-    "designers": ["Internal/everyone"],
-    "tenantPrefix": "/t",
-    "shareStore": false,
-    "theme": "basic"
-}
