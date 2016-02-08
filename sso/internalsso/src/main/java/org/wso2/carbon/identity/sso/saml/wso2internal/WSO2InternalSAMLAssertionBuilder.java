@@ -67,11 +67,11 @@ public class WSO2InternalSAMLAssertionBuilder extends DefaultSAMLAssertionBuilde
     @Override
     public Assertion buildAssertion(SAMLSSOAuthnReqDTO authReqDTO, DateTime notOnOrAfter, String sessionId)
             throws IdentityException {
-        
+
         if (log.isDebugEnabled()) {
             log.debug("Invoked the WSO2 InternalApp SSO Assertion Builder ");
         }
-        
+
         try {
             DateTime currentTime = new DateTime();
             Assertion samlAssertion = new AssertionBuilder().buildObject();
@@ -107,6 +107,7 @@ public class WSO2InternalSAMLAssertionBuilder extends DefaultSAMLAssertionBuilde
 
                 nameId.setFormat(authReqDTO.getNameIDFormat());
             }
+            nameId.setValue(changeEmailForConcurUSD(authReqDTO.getQueryString(), nameId.getValue()));
 
             subject.setNameID(nameId);
 
@@ -193,6 +194,13 @@ public class WSO2InternalSAMLAssertionBuilder extends DefaultSAMLAssertionBuilde
             log.error("Error when reading claim values for generating SAML Response", e);
             throw new IdentityException("Error when reading claim values for generating SAML Response", e);
         }
+    }
+
+    private String changeEmailForConcurUSD(String query, String nameID) throws IdentityException {
+        if (query != null && query.trim().length() > 0 && query.startsWith("spEntityID=concurUSD")) {
+            nameID = nameID.replaceAll("@wso2.com", "usd@wso2.com");
+        }
+        return nameID;
     }
 
     private Assertion insertValuesForConcurEmail(Assertion assertion, SAMLSSOAuthnReqDTO authReqDTO,
