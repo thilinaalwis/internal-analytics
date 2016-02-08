@@ -1,19 +1,93 @@
 <%
-    var db = new Database("jdbc:mysql://localhost:3306/test", "root", "");
-    var action = request.getParameter("action");
+include("insertdata.jag");
+var db = new Database("UniDash_DS");
+var action = request.getParameter("action");
+
+var begin = new Date();
+begin.setDate(begin.getDate() - 180);
+
+var end = new Date();
+end.setDate(end.getDate()+365);
 
 
-    function getRecords()
+var DEFAULT_DUE_DATE="<due_date/>";
+var DEFAULT_STATUS="open";
+var MIN_DUE_DATE=[begin.getFullYear(),('0' + (begin.getMonth() + 1)).slice(-2),('0' + begin.getDate()).slice(-2)].join('-');
+var MAX_DUE_DATE=[end.getFullYear(),('0' + (end.getMonth() + 1)).slice(-2),('0' + end.getDate()).slice(-2)].join('-');
+
+function putDbRecords()
+{
+    // get the result set of maximum timestamp
+    var max_time_stamp_results=db.query("select version_id,MAX(_timestamp) as time  from RM_VERSION where status='"+DEFAULT_STATUS+"' and due_date!='"+DEFAULT_DUE_DATE+"' and due_date<'"+MAX_DUE_DATE+"' and due_date > '"+MIN_DUE_DATE+"' and version_name like '%GA%' group by version_id;");
+    var data_set=[];
+    // get the record with second maximum timestamps for each record
+    for(var i in max_time_stamp_results)
     {
+      data_set[i]=db.query("select distinct t.version_id,t.project_id,t.version_name,t.due_date,t.status,t._timestamp from (select RM_VERSION.version_id,MAX(RM_VERSION._timestamp) as x from RM_VERSION where RM_VERSION.version_id="+max_time_stamp_results[i].version_id+" and RM_VERSION._timestamp<'"+max_time_stamp_results[i].time+"' ) as m inner join RM_VERSION as t on t.version_id=m.version_id and t._timestamp=m.x   ;");
+    }
+    //convert to JSON
+    var latest_records=JSON.stringify(data_set);
+    // get current data
+    var result=db.query("select distinct t.version_id,t.project_id,p.Project_Name,t.version_name,t.due_date,t.status,t._timestamp from (select version_id,MAX(_timestamp) as x from RM_VERSION group by version_id) as m inner join RM_VERSION as t on t.version_id=m.version_id and t._timestamp=m.x and t.status='"+DEFAULT_STATUS+"' and t.due_date!='"+DEFAULT_DUE_DATE+"' and t.due_date>'"+MIN_DUE_DATE+"' and t.due_date<'"+MAX_DUE_DATE+"' and t.version_name LIKE '%GA%' left join (select Project_id,Project_Name,MAX(_timestamp) from RM_PROJECT group by project_id) as p on   p.project_id=t.project_id;");
+    // compare with old records and put in to a table if there is any change of due_date
+    insertData(result,latest_records);
+   // create JSON array for data bind
+    createJSONArray(result);
 
-    var result = db.query("select  DISTINCT project.Project_id,Project_Name,version_name,due_date,status from project,version where project.Project_id=version.project_id and date(version._timestamp)=CURDATE();");
+}
 
-        print(result);
-        return result;
+function createJSONArray(result)
+{
+    var updates=db.query("select DISTINCT version_id,Project_id,old_due_date from RM_CHANGED_RECORD  order by _timestamp;");
+    var records=[];
+
+    if(updates!=null)
+    {
+        for(var i in result)
+        {
+            var old_due_dates=[];
+            var k=0;
+            for(var j in updates )
+            {
+                if(updates[j].version_id===result[i].version_id)
+                {
+                    old_due_dates[k++]=updates[j].old_due_date;
+
+                }
+            }
+
+            records.push({
+                "Project_Name" : result[i].Project_Name,
+                "version_id"  : result[i].version_id,
+                "version_name" : result[i].version_name,
+                "due_date" : result[i].due_date,
+                "old_due_dates":old_due_dates,
+                "status" : result[i].status
+
+            });
+        }
+    }
+    else
+    {
+        for(var i in result)
+        {
+            records.push({
+                "Project_Name" : result[i].Project_Name,
+                "version_id"  : result[i].version_id,
+                "version_name" : result[i].version_name,
+                "due_date" : result[i].due_date,
+                "old_due_date":old_due_dates,
+                "status" : result[i].status
+
+            });
+        }
     }
 
-     getRecords();
+    print(records);
+    return records;
 
- %>
+}
+putDbRecords();
+%>
 
 

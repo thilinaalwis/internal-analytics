@@ -1,7 +1,10 @@
 package wso2;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -13,6 +16,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Properties;
 
 import org.apache.synapse.ManagedLifecycle;
 import org.apache.synapse.core.SynapseEnvironment;
@@ -25,6 +29,9 @@ import org.json.JSONObject;
 public class Builds implements Task, ManagedLifecycle {
 
     private SynapseEnvironment synapseEnvironment;
+    static Properties prop = new Properties();
+    InputStream input = null;
+    private static final String CARBON_HOME = System.getProperty("carbon.home");
 
     @Override
     public void destroy() {
@@ -40,25 +47,32 @@ public class Builds implements Task, ManagedLifecycle {
     @Override
     public void execute() {
 
-        // database URL
-        final String DB_URL = "jdbc:mysql://192.168.8.35/sf"; //"jdbc:mysql://127.0.0.1:9000/sf";
-
-        // Database credentials
-        final String USER = "sf";//"sf";
-        final String PASS = "sf!23";//"sf!23";
-
-        Connection conn = null;
-        Statement stmt = null;
+        Connection conn;
+        Statement stmt;
         String Product = "";
         ArrayList<Integer> Component = new ArrayList<Integer>();
 
         try {
+            //Loading property files
+            input = new FileInputStream(CARBON_HOME + File.separator + "repository" +
+                    File.separator + "conf" + File.separator + "etc" + File.separator +
+                    "dashboard-config.properties");
+
+            // load a properties file
+            prop.load(input);
+
+
+            // Read database configs from property file
+            final String DB_URL = prop.getProperty("dburl");
+            final String USER = prop.getProperty("dbusername");
+            final String PASS = prop.getProperty("dbpassword");
+
+
             String lastCompletedBuildStatus = "";
             String componentName = "";
             int lastFailedBuildNum;
             int lastSuccessfulBuildNum;
             int lastCompletedBuildNum;            //the build number of the previous build. //lastBuild refers to the
-            // current ongoing build.
             boolean addComponentStatus;
 
             Date date = new Date();
@@ -115,14 +129,10 @@ public class Builds implements Task, ManagedLifecycle {
                         lastCompletedBuildStatus = "Success";
                     } else if (lastCompletedBuildNum == lastFailedBuildNum) {
                         lastCompletedBuildStatus = "Failed";
-                    }
-                    else
-                    {
-                        lastCompletedBuildStatus="Aborted";
+                    } else {
+                        lastCompletedBuildStatus = "Aborted";
                     }
 
-
-                    //System.out.println(lastCompletedBuildStatus);
 
                     Class.forName("com.mysql.jdbc.Driver");
                     conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -202,7 +212,6 @@ public class Builds implements Task, ManagedLifecycle {
         // TODO Auto-generated method stub
         Builds tt = new Builds();
         tt.execute();
-//System.out.println("Finished execution!");
     }
 }
 

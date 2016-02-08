@@ -25,5 +25,8 @@
         <module name="PMTDataConnector" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PMTDataConnector" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

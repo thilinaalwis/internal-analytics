@@ -145,6 +145,7 @@ public class WSO2InternalSAMLAssertionBuilder extends DefaultSAMLAssertionBuilde
             AuthnContextClassRef authCtxClassRef = new AuthnContextClassRefBuilder().buildObject();
             authCtxClassRef.setAuthnContextClassRef(AuthnContext.PASSWORD_AUTHN_CTX);
             authContext.setAuthnContextClassRef(authCtxClassRef);
+            authStmt.setSessionNotOnOrAfter(notOnOrAfter);
             authStmt.setAuthnContext(authContext);
             if (authReqDTO.isDoSingleLogout()) {
                 authStmt.setSessionIndex(sessionId);

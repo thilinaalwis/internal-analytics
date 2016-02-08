@@ -1,0 +1,26 @@
+<%
+function insertData(result,latest_records)
+{
+    // keep record about due_date changes in RM_CHANGED_RECORD table
+    for ( var i in result)
+    {
+        var item=result[i];
+        for(var j in latest_records)
+        {
+            if(item.version_id===latest_records[j].version_id)
+            {
+                if(item.due_date!=latest_records[j].due_date && latest_records[j].due_date!="<due_date/>")
+                {
+                    var query="INSERT INTO RM_CHANGED_RECORD(version_id,Project_id,old_due_date) VALUES("+item.version_id+","+item.Project_id+",'"+latest_records[j].due_date+"');";
+                    db.query(query);
+                    db.commit();
+                }
+
+            }
+        }
+
+    }
+
+}
+%>
+
