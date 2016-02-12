@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.context.ConfigurationContextFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.synapse.core.SynapseEnvironment;
 import org.w3c.dom.Document;
 import org.wso2.carbon.base.ServerConfiguration;
@@ -28,12 +30,14 @@ import org.xml.sax.InputSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.Date;
-import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PMTConnector implements Task, ManagedLifecycle {
 
-
+    ArrayList<String> tmpProductNames = new ArrayList<String>();
     private SynapseEnvironment synapseEnvironment;
     private static ConfigurationContext configContext = null;
     private static final String CARBON_HOME = System.getProperty("carbon.home");
@@ -54,9 +58,6 @@ public class PMTConnector implements Task, ManagedLifecycle {
         String serverURL = prop.getProperty("gregserviceURL");
 
         // get the property value and print it out
-        System.out.println();
-        System.out.println();
-        System.out.println();
 
         System.setProperty("javax.net.ssl.trustStore", CARBON_HOME + File.separator + "repository" +
                 File.separator + "resources" + File.separator + "security" + File.separator +
@@ -91,9 +92,53 @@ public class PMTConnector implements Task, ManagedLifecycle {
         return "'" + formattedDate + "'";
     }
 
+    public static String getVersion(String productName){
+        String re1=".*?";	// Non-greedy match on filler
+        String re2="(\\d)";	// Any Single Digit 1
+        String re3="(.)";	// Any Single Character 1
+        String re4="(\\d)";	// Any Single Digit 2
+        String re5="(.)";	// Any Single Character 2
+        String re6="(\\d)";	// Any Single Digit 3
+
+
+        Pattern p = Pattern.compile(re1+re2+re3+re4+re5+re6,Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Matcher m = p.matcher(productName);
+        if (m.find())
+        {
+            String d1=m.group(1);
+            String c1=m.group(2);
+            String d2=m.group(3);
+            String c2=m.group(4);
+            String d3=m.group(5);
+
+            return d1.toString()+c1.toString()+d2.toString()+c2.toString()+d3.toString();
+
+        }
+        else return "";
+    }
+
+    public static boolean isCarbon(String productName){
+
+        String re1="(C)";	// Any Single Character 1
+        String re2="(A)";	// Any Single Character 2
+        String re3="(R)";	// Any Single Character 3
+        String re4="(B)";	// Any Single Character 4
+        String re5="(O)";	// Any Single Character 5
+        String re6="(N)";	// Any Single Character 6
+
+        Pattern p = Pattern.compile(re1+re2+re3+re4+re5+re6,Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Matcher m = p.matcher(productName);
+        if (m.find())
+        {
+            return true;
+        }
+        else return false;
+    }
 
     @Override
     public void init(SynapseEnvironment synapseEnvironment) {
+
+
         this.synapseEnvironment = synapseEnvironment;
     }
 
@@ -135,27 +180,55 @@ public class PMTConnector implements Task, ManagedLifecycle {
             final String DB_URL = prop.getProperty("dburl");
             final String USER = prop.getProperty("dbusername");
             final String PASS = prop.getProperty("dbpassword");
+            Log log = LogFactory.getLog(PMTConnector.class);
+
 
             Connection conn;
-            Statement stmt;
+            Statement statement2;
+            Statement statement1;
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
+            int count = 0;
 
             for (String patch : patches) {
-
-                String patchRecords = RegistryUtils.decodeBytes((byte[]) registry.get(patch).getContent());
+                String patchRecords;
+                try {
+                    patchRecords = RegistryUtils.decodeBytes((byte[]) registry.get(patch).getContent());
+                } catch (ClassCastException e) {
+                    //skip this as the current record is not a patch
+                    continue;
+                }
                 documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
                 InputSource inputSource = new InputSource();
                 inputSource.setCharacterStream(new StringReader(patchRecords));
                 Document document = documentBuilder.parse(inputSource);
+                boolean isVersionBlank = false;
                 Version defaultPlatformVersion = new Version("4.0.0");
+                String RefactoredProducts = "";
+                String finalNameWithVersion = "";
                 Version OverviewCarbonPlatform;
+                String MediaType = null;
+                String PatchID = null;
+                String LifecycleName = null;
+                String LifecycleState = null;
+                String JarsInvolved = null;
+                String OverviewIssueType = null;
+                String DateReleasedOn = null;
+                String OverviewName = null;
+                String TestAutomationAvailable = null;
+                String DateDevelopmentStartedOn = null;
+                String OverviewProducts = null;
+                String DateQAStartedOn = null;
+                String QAedBy = null;
+                String DevelopedBy = null;
+                String OverviewClient = null;
+
 
                 try {
                     if (document.getElementsByTagName("carbonPlatform") != null) {
                         OverviewCarbonPlatform = new Version(document.getElementsByTagName("carbonPlatform").item(0)
                                 .getTextContent());
+
                     } else {
                         OverviewCarbonPlatform = new Version("0.0.0");
 
@@ -164,102 +237,141 @@ public class PMTConnector implements Task, ManagedLifecycle {
                     OverviewCarbonPlatform = new Version("0.0.0");
                 }
 
-                if (defaultPlatformVersion.compareTo(OverviewCarbonPlatform) == -1 || defaultPlatformVersion.equals
-                        (OverviewCarbonPlatform)) {
+                String TMPproducts;
+                String CarbonPlatform = "";
+                if (document.getElementsByTagName("products").getLength() == 1) {
+                    TMPproducts = document.getElementsByTagName("products").item(0).getTextContent();
+                    try {
+                        if (document.getElementsByTagName("carbonPlatform") != null) {
+                            CarbonPlatform = document.getElementsByTagName("carbonPlatform").item(0).getTextContent();
+                        }
+                    }catch (Exception e){
+                        CarbonPlatform ="";
+                    }
+                    if(CarbonPlatform != "") {
+                        List<String> items = Arrays.asList(TMPproducts.split("\\s*,\\s*"));
+                        for (String it : items) {
+                            log.info("Storing PMT data...");
+                            System.out.println("Storing PMT data...");
+                            count ++;
+                            ResultSet resultSetProductVersion = null;
+                            statement1 = conn.createStatement();
+                            String getProductVersion = "";
+                            String finalProductName="";
+                            if (!it.contains("SES") && !"-".equals(it)) {
+                                String version = getVersion(it);
+                                String updatedName = UpdateProductName.UpdateName(it);
+                                if(version !=""){
+                                    finalNameWithVersion= updatedName +" "+ version;
+                                }
+                                else{
+                                    getProductVersion = "SELECT ProductVersion FROM INTERNAL_PRODUCT_RELEASES WHERE " +
+                                            "ProductName = '" + updatedName + "'AND CarbonReleaseID = (SELECT " +
+                                            "idINTERNAL_CARBON_RELEASES FROM INTERNAL_CARBON_RELEASES WHERE CarbonVersion" +
 
-                    String MediaType = null;
-                    String PatchID = null;
-                    String LifecycleName = null;
-                    String LifecycleState = null;
-                    String JarsInvolved = null;
-                    String OverviewIssueType = null;
-                    String DateReleasedOn = null;
-                    String OverviewName = null;
-                    String TestAutomationAvailable = null;
-                    String DateDevelopmentStartedOn = null;
-                    String OverviewProducts = null;
-                    String DateQAStartedOn = null;
-                    String QAedBy = null;
-                    String DevelopedBy = null;
-                    String OverviewClient = null;
+                                            " = '" + OverviewCarbonPlatform.version + "') ";
+                                    resultSetProductVersion = statement1.executeQuery(getProductVersion);
+                                    String v = "";
 
-                    if (registry.get(patch).getMediaType() != null) {
-                        MediaType = registry.get(patch).getMediaType();
-                    }
-                    if (registry.get(patch).getUUID() != null) {
-                        PatchID = registry.get(patch).getUUID();
-                    }
-                    if (registry.get(patch).getProperty("registry.LC.name") != null) {
-                        LifecycleName = registry.get(patch).getProperty("registry.LC.name");
-                    }
-                    if (registry.get(patch).getProperty("registry.lifecycle.PatchLifeCycle.state") != null) {
-                        LifecycleState = registry.get(patch).getProperty("registry.lifecycle.PatchLifeCycle.state");
-                    }
-                    if (document.getElementsByTagName("jarsInvolved").getLength() == 1) {
-                        JarsInvolved = document.getElementsByTagName("jarsInvolved").item(0).getTextContent();
-                    }
-                    if (document.getElementsByTagName("issueType").getLength() == 1) {
-                        OverviewIssueType = document.getElementsByTagName("issueType").item(0).getTextContent();
-                    }
-                    if (document.getElementsByTagName("client").getLength() == 1) {
-                        OverviewClient = document.getElementsByTagName("client").item(0).getTextContent().replace
-                                ("'", "\\'");
-                    }
-                    if (document.getElementsByTagName("releasedOn").getLength() == 1) {
-                        DateReleasedOn = formatDate(document.getElementsByTagName("releasedOn").item(0)
-                                .getTextContent());
-                    }
-                    if (document.getElementsByTagName("name").getLength() == 1) {
-                        OverviewName = document.getElementsByTagName("name").item(0).getTextContent();
-                    }
-                    if (document.getElementsByTagName("releasedOn").getLength() == 1) {
-                        DateReleasedOn = formatDate(document.getElementsByTagName("releasedOn").item(0)
-                                .getTextContent());
-                    }
-                    if (document.getElementsByTagName("automationavailable").getLength() == 1) {
-                        TestAutomationAvailable = document.getElementsByTagName("automationavailable").item(0)
-                                .getTextContent();
-                    }
-                    if (document.getElementsByTagName("developmentStartedOn").getLength() == 1) {
-                        DateDevelopmentStartedOn = formatDate(document.getElementsByTagName("developmentStartedOn")
-                                .item(0).getTextContent());
-                    }
-                    if (document.getElementsByTagName("products").getLength() == 1) {
-                        OverviewProducts = document.getElementsByTagName("products").item(0).getTextContent();
-                    }
-                    if (document.getElementsByTagName("qaStartedOn").getLength() == 1) {
-                        DateQAStartedOn = formatDate(document.getElementsByTagName("qaStartedOn").item(0)
-                                .getTextContent());
-                    }
-                    if (document.getElementsByTagName("qaedby").getLength() == 1) {
-                        QAedBy = document.getElementsByTagName("qaedby").item(0).getTextContent().replace("'", "\\'");
-                    }
-                    if (document.getElementsByTagName("developedby").getLength() == 1) {
-                        DevelopedBy = document.getElementsByTagName("developedby").item(0).getTextContent();
-                    }
+                                    if (resultSetProductVersion.next()) {
+                                        v = resultSetProductVersion.getString(1);
+                                    }
+                                    finalNameWithVersion = updatedName +" "+v;
+                                }
 
 
-                    stmt = conn.createStatement();
+                                if (registry.get(patch).getMediaType() != null) {
+                                    MediaType = registry.get(patch).getMediaType();
+                                }
+                                if (registry.get(patch).getUUID() != null) {
+                                    PatchID = registry.get(patch).getUUID();
+                                }
+                                if (registry.get(patch).getProperty("registry.LC.name") != null) {
+                                    LifecycleName = registry.get(patch).getProperty("registry.LC.name");
+                                }
+                                if (registry.get(patch).getProperty("registry.lifecycle.PatchLifeCycle.state") != null) {
+                                    LifecycleState = registry.get(patch).getProperty("registry.lifecycle.PatchLifeCycle.state");
+                                }
+                                if (document.getElementsByTagName("jarsInvolved").getLength() == 1) {
+                                    JarsInvolved = document.getElementsByTagName("jarsInvolved").item(0).getTextContent();
+                                }
+                                if (document.getElementsByTagName("issueType").getLength() == 1) {
+                                    OverviewIssueType = document.getElementsByTagName("issueType").item(0).getTextContent();
+                                }
+                                if (document.getElementsByTagName("client").getLength() == 1) {
+                                    OverviewClient = document.getElementsByTagName("client").item(0).getTextContent().replace
+                                            ("'", "\\'");
+                                }
+                                if (document.getElementsByTagName("releasedOn").getLength() == 1) {
+                                    DateReleasedOn = formatDate(document.getElementsByTagName("releasedOn").item(0)
+                                            .getTextContent());
+                                }
+                                if (document.getElementsByTagName("name").getLength() == 1) {
+                                    OverviewName = document.getElementsByTagName("name").item(0).getTextContent();
+                                }
+                                if (document.getElementsByTagName("releasedOn").getLength() == 1) {
+                                    DateReleasedOn = formatDate(document.getElementsByTagName("releasedOn").item(0)
+                                            .getTextContent());
+                                }
+                                if (document.getElementsByTagName("automationavailable").getLength() == 1) {
+                                    TestAutomationAvailable = document.getElementsByTagName("automationavailable").item(0)
+                                            .getTextContent();
+                                }
+                                if (document.getElementsByTagName("developmentStartedOn").getLength() == 1) {
+                                    DateDevelopmentStartedOn = formatDate(document.getElementsByTagName("developmentStartedOn" +
+                                            "").item(0).getTextContent());
+                                }
+                                if (document.getElementsByTagName("qaStartedOn").getLength() == 1) {
+                                    DateQAStartedOn = formatDate(document.getElementsByTagName("qaStartedOn").item(0)
+                                            .getTextContent());
+                                }
+                                if (document.getElementsByTagName("qaedby").getLength() == 1) {
+                                    QAedBy = document.getElementsByTagName("qaedby").item(0).getTextContent().replace("'", "\\'");
+                                }
+                                if (document.getElementsByTagName("developedby").getLength() == 1) {
+                                    DevelopedBy = document.getElementsByTagName("developedby").item(0).getTextContent();
+                                }
 
-                    String sql3 = "INSERT INTO PMTData VALUES( NULL ,'" + timestamp + "','" + MediaType + "','" +
-                            PatchID + "','" + LifecycleName + "','" + LifecycleState + "','" +
-                            JarsInvolved + "','" +
-                            OverviewIssueType + "'," + DateReleasedOn + ",'" +
-                            OverviewName + "','" + TestAutomationAvailable + "'," +
-                            DateDevelopmentStartedOn + ",'" + OverviewProducts + "'," +
-                            DateQAStartedOn + ",'" + OverviewCarbonPlatform.version + "','" +
-                            QAedBy + "','" + DevelopedBy + "','" + OverviewClient + "')";
+                                UpdateProductName.writetoAfile(finalNameWithVersion,OverviewName,it);
 
-                    /**System.out.println(sql3);
-                     System.out.println
-                     ("**********************************************************************************************************");
-                     */
-                    stmt.executeUpdate(sql3);
-                    stmt.close();
+                                statement2 = conn.createStatement();
+
+                                String sql3 = "INSERT INTO PMTData VALUES( NULL ,'" + timestamp + "','" + MediaType + "','" +
+                                        PatchID + "','" + LifecycleName + "','" + LifecycleState + "','" +
+                                        JarsInvolved + "','" +
+                                        OverviewIssueType + "'," + DateReleasedOn + ",'" +
+                                        OverviewName + "','" + TestAutomationAvailable + "'," +
+                                        DateDevelopmentStartedOn + ",'" + finalNameWithVersion + "'," +
+                                        DateQAStartedOn + ",'" + OverviewCarbonPlatform.version + "','" +
+                                        QAedBy + "','" + DevelopedBy + "','" + OverviewClient + "')";
+
+                                statement2.executeUpdate(sql3);
+                                statement2.close();
+                                /**
+                                 * System.out.println("Carbon platform: " + CarbonPlatform +
+                                        "Count: "+ count +"   =======    Product Name : " + it + "   ======= " +
+                                        " " +
+                                        "Updated " +
+                                        "product name: " +
+                                        " " +
+                                        finalNameWithVersion );
+                                 */
+
+
+                            }
+
+                        }
+                    }
+                    else{
+                    }
                 }
-            }
-            conn.close();
 
+            }
+            System.out.println("**************************************************** PMT Data successfully stored. "
+                    + "****************************************************");
+            log.info("**************************************************** PMT Data successfully stored. "
+                    + "****************************************************");
+            conn.close();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
