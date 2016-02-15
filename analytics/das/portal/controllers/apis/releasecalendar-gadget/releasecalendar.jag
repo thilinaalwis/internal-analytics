@@ -1,0 +1,209 @@
+<%
+/*
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ */
+include("insertdata.jag");
+//make the db connection through the UniDash_DS datasource
+var db = new Database("UnifiedDashboards");
+//calculate the date which is 6 months back from current date
+var begin = new Date();
+begin.setDate(begin.getDate() - 180);
+//calculate the date which is 12 months ahead  from current date
+var end = new Date();
+end.setDate(end.getDate() + 365);
+//assign the default value exists in the db for the due_date attribute
+var DEFAULT_DUE_DATE = "<due_date/>";
+//assign the status of the product as "open"
+var DEFAULT_STATUS = "open";
+//convert begin date of the time period in to yyyy-dd-mm format
+var MIN_DUE_DATE = [begin.getFullYear(), ('0' + (begin.getMonth() + 1)).slice(-2), ('0' + begin.getDate()).slice(-2)].join('-');
+//convert end date of the time period in to yyyy-dd-mm format
+var MAX_DUE_DATE = [end.getFullYear(), ('0' + (end.getMonth() + 1)).slice(-2), ('0' + end.getDate()).slice(-2)].join('-');
+/**
+ *
+ */
+function putDbRecords() {
+    /**
+     * select version_id with maximum timestamp from today results which are in selected time range and the
+     * status="open" and due_date!=<due_date/> and the version should be GA-versions
+     */
+    var query_version_id_data="select version_id,MAX(_timestamp) as time "+
+            " from RM_VERSION"+
+            " where status='"+DEFAULT_STATUS+"' and due_date!='"+DEFAULT_DUE_DATE+"' and due_date<'"+MAX_DUE_DATE+"' and due_date > '"+MIN_DUE_DATE+"' and "+
+            " version_name like '%GA%' and date(_timestamp)=CURDATE() group by version_id;";
+ var max_time_stamp_results=db.query(query_version_id_data);
+ //if result set for the current date is not exist then select the result set with latest timestamp
+ if(max_time_stamp_results.length==0)
+ {
+  query_version_id_data="select version_id,MAX(_timestamp) as time "+
+  " from RM_VERSION"+
+  " where status='"+DEFAULT_STATUS+"' and due_date!='"+DEFAULT_DUE_DATE+"' and due_date<'"+MAX_DUE_DATE+"' and due_date > '"+MIN_DUE_DATE+"' and "+
+  " version_name like '%GA%' group by version_id;";
+  max_time_stamp_results=db.query(query_version_id_data);
+ }
+
+ var latest_records=[];
+ for (var i in max_time_stamp_results) {
+  //convert date in to db timestamp format
+  var temp_date=new Date(max_time_stamp_results[i].time);
+  temp_date = temp_date.getUTCFullYear() + '-' +
+  ('00' + (temp_date.getUTCMonth()+1)).slice(-2) + '-' +
+  ('00' + temp_date.getUTCDate()).slice(-2) + ' ' +
+  ('00' + temp_date.getUTCHours()).slice(-2) + ':' +
+  ('00' + temp_date.getUTCMinutes()).slice(-2) + ':' +
+  ('00' + temp_date.getUTCSeconds()).slice(-2);
+  var query_second_max_record="SELECT DISTINCT t.version_id,t.project_id,t.version_name,t.due_date,t.status,t._timestamp "+
+  "FROM(SELECT  RM_VERSION.version_id, MAX(RM_VERSION._timestamp) AS  x FROM RM_VERSION "+
+  "WHERE RM_VERSION.version_id = "+max_time_stamp_results[i].version_id+" AND "+
+  " RM_VERSION._timestamp < '"+max_time_stamp_results[i].time+"') AS  m "+
+  "INNER JOIN RM_VERSION  AS t ON t.version_id = m.version_id  AND t._timestamp = m.x; ";
+  var data_set = db.query(query_second_max_record);
+
+  if(data_set.length!=0)
+  {
+   //if there is a second max result set for the given version id then push that result set in to latest_records array
+   latest_records.push({
+    "version_id":data_set[0].version_id,
+    "project_id":data_set[0].project_id,
+    "version_name":data_set[0].version_name,
+    "due_date":data_set[0].due_date,
+    "status":data_set[0].status,
+    "_timestamp":data_set[0]._timestamp
+
+   });
+  }
+
+ }
+
+ // get the product details with maximum time stamp
+ var query_latesttimestamp_data="select distinct t.version_id,t.project_id,t.version_name,t.due_date,t.status,t._timestamp "+
+ "from (select version_id,MAX(_timestamp) as x from RM_VERSION where date(_timestamp)=CURDATE() group by version_id) as m "+
+ "inner join RM_VERSION as t on t.version_id=m.version_id and t._timestamp=m.x and t.status='"+DEFAULT_STATUS+"' and "+
+ "t.due_date!='"+DEFAULT_DUE_DATE+"' and t.due_date>'"+MIN_DUE_DATE+"' and t.due_date<'"+MAX_DUE_DATE+"' and "+
+ " t.version_name LIKE '%GA%';";
+ var result=db.query(query_latesttimestamp_data);
+
+ //if there is no data with current date then get the latest timestamp data
+ if(result.length==0)
+ {
+  query_latesttimestamp_data="select distinct t.version_id,t.project_id,t.version_name,t.due_date,t.status,t._timestamp "+
+  "from (select version_id,MAX(_timestamp) as x from RM_VERSION  group by version_id) as m "+
+  "inner join RM_VERSION as t on t.version_id=m.version_id and t._timestamp=m.x and t.status='"+DEFAULT_STATUS+"' and "+
+  "t.due_date!='"+DEFAULT_DUE_DATE+"' and t.due_date>'"+MIN_DUE_DATE+"' and t.due_date<'"+MAX_DUE_DATE+"' and "+
+  " t.version_name LIKE '%GA%';";
+  result=db.query(query_latesttimestamp_data);
+
+ }
+ //get project list with latest timestamp of today
+ var query_project_data="select distinct t.Project_id,t.Project_Name,t._timestamp "+
+ " from (select Project_id,MAX(_timestamp) as x from RM_PROJECT WHERE DATE(_timestamp)=CURDATE() GROUP BY Project_id) as m "+
+ "INNER JOIN RM_PROJECT AS t on t.Project_id=m.Project_id and t._timestamp=m.x;";
+ var project_list=db.query(query_project_data);
+ //if there is no data for today then select by latest timestamp.
+ if(project_list.length==0)
+ {
+  query_project_data="select distinct t.Project_id,t.Project_Name,t._timestamp "+
+  " from (select Project_id,MAX(_timestamp) as x from RM_PROJECT  GROUP BY Project_id) as m "+
+  "INNER JOIN RM_PROJECT AS t on t.Project_id=m.Project_id and t._timestamp=m.x;";
+  project_list=db.query(query_project_data);
+ }
+ /**
+  * compare  old updated due_date details of the product and
+  * put in to a table if there is any new change of due_date
+  */
+ insertData(result,latest_records);
+ createJSONArray(result,project_list);
+
+}
+/**
+ * @param result- product details of the latest time stamp
+ */
+function createJSONArray(result,project_list) {
+ //select the updates of the due dates from RM_CHANGED_RECORD table
+ var query_changed_record_data="SELECT DISTINCT version_id,Project_id,old_due_date "+
+ "FROM  RM_CHANGED_RECORD  ORDER  BY  _timestamp;";
+ var updates = db.query(query_changed_record_data);
+ var records = [];
+ //check for any updated due_dates of the products
+ if (updates != null) {
+  //go through the each product and create old_due_date[] for each product.
+  for (var i in result) {
+   var old_due_dates = [];
+   var k = 0;
+   for (var j in updates) {
+    if (updates[j].version_id === result[i].version_id) {
+     old_due_dates[k++] = updates[j].old_due_date;
+
+    }
+   }
+   //store the following product details in records array
+   records.push({
+    "Project_Name": getProjectName(project_list,result[i].project_id),
+    "version_id": result[i].version_id,
+    "version_name": result[i].version_name,
+    "due_date": result[i].due_date,
+    "old_due_dates": old_due_dates,
+    "status": result[i].status
+
+   });
+  }
+ }
+ else {
+  /*if there is no any updated due_date details then assign empty
+   array for old_due_date field */
+  for (var i in result) {
+   records.push({
+    "Project_Name": getProjectName(project_list,result[i].project_id),
+    "version_id": result[i].version_id,
+    "version_name": result[i].version_name,
+    "due_date": result[i].due_date,
+    "old_due_date": old_due_dates,
+    "status": result[i].status
+
+   });
+  }
+ }
+
+ print(records);
+ return records;
+
+}
+/**
+ * this function returns the project name for given project_id
+ */
+
+function getProjectName(project_list,projectId)
+{
+ var project_name;
+ //go through the project list and returns the project name if exists for the given project id else return "unknown"
+ for(var j in project_list)
+ {
+  if(project_list[j].Project_id==projectId)
+  {
+
+   project_name= project_list[j].Project_Name;
+   break;
+  }
+  else
+  {
+   project_name="Unknown";
+  }
+ }
+ return project_name;
+}
+putDbRecords();
+%>
+
+
