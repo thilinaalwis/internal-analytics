@@ -1,0 +1,16 @@
+{
+    "id": "product-list-selector",
+    "title": "product-list-selector",
+    "type": "gadget",
+    "thumbnail": "store://gadget/product-list-selector/index.png",
+    "data": {
+        "url": "store://gadget/product-list-selector/index.xml"
+    },
+    "notify": {
+        "select": {
+            "type": "address",
+            "description": "This notifies selected state"
+        }
+	
+    }
+}
