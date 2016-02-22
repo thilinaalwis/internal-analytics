@@ -1,0 +1,54 @@
+<%
+/*
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ */
+//make the db connection through the UniDash_DS datasource
+var db = new Database("UnifiedDashboards");
+
+function getData()
+{
+    //get data from SF table
+    var db_query_SF_Support_Hours= "SELECT t.SupportAccountKey, t.DevelopmentSupportHours,t.EndDate,t._timestamp  FROM (SELECT SupportAccountKey,MAX(_timestamp) AS timestamp FROM SF_SUPPORT_HOURS GROUP BY SupportAccountKey) AS m INNER JOIN SF_SUPPORT_HOURS AS t ON  m.SupportAccountKey=t.SupportAccountKey and m.timestamp=t._timestamp;";
+    var SF_result_set= db.query(db_query_SF_Support_Hours);
+    //get data from JIRA table
+    var db_query_JIRA_Support_Hours="select t.projectKey, t.name, t.hoursConsumed,t.timestamp  from (select projectKey,MAX(timestamp) as timestamp from SUPJ_Project_Time_Consumption group by projectKey) as m inner join SUPJ_Project_Time_Consumption as t on  m.projectKey=t.projectKey and m.timestamp=t.timestamp;";
+    var JIRA_result_set= db.query(db_query_JIRA_Support_Hours);
+    var remaining_hours_data=[];
+    if(SF_result_set.length!=0 && JIRA_result_set!=0) {
+        for (var i in SF_result_set) {
+            if (SF_result_set[i].DevelopmentSupportHours != null) {
+                for (var j in JIRA_result_set) {
+                    if (SF_result_set[i].SupportAccountKey == JIRA_result_set[j].projectKey) {
+                        remaining_hours_data.push({
+                            "SupportAccountKey": SF_result_set[i].SupportAccountKey,
+                            "Account_Name": JIRA_result_set[j].name,
+                            "remaining_hours": SF_result_set[i].DevelopmentSupportHours - JIRA_result_set[j].hoursConsumed,
+			    "EndDate":SF_result_set[i].EndDate
+
+                        });
+                        break;
+                    }
+                }
+            }
+        }
+        print(remaining_hours_data);
+    }
+    else{
+        print("Error");
+    }
+
+}
+getData();
+%>

@@ -1,0 +1,10 @@
+{
+    "id": "patching-trend-table",
+    "title": "Patching Trend",
+    "type": "gadget",
+    "thumbnail": "store://gadget/patching-trend-table/index.png",
+    "data": {
+        "url": "store://gadget/patching-trend-table/index.xml"
+    },
+    "description": "To display patching trend"
+}

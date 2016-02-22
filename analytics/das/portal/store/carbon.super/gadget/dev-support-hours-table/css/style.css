@@ -1,0 +1,35 @@
+
+.top table {
+    width: 500px;
+}
+
+.datatable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+ .datatable td {
+    text-align: left;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.datatable tr:nth-child(even) {
+    background-color: #ACFAF7
+}
+
+.datatable th {
+text-align: left;
+border: 1px solid #ddd;
+    background-color: #08CCC6;
+    color: white;
+    padding: 15px;
+text-align: left;
+}
+
+
+
+.headerSortUp {
+    background: url(../img/bg.gif)
+no-repeat 99%;
+}
