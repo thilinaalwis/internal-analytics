@@ -1,0 +1,10 @@
+{
+  "id": "pmt-barchart",
+  "title": "Patch Count Vs Month",
+  "type": "gadget",
+  "thumbnail": "store://gadget/pmt-barchart/index.png",
+  "data": {
+    "url": "store://gadget/pmt-barchart/index.xml"
+  },
+  "description": "To display overall patch count month by month"
+}

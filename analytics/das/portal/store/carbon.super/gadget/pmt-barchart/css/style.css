@@ -1,0 +1,23 @@
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#header {
+    width: 100%;
+    background-color: #E1F2FF;
+    color: black;
+    text-align: left;
+    padding: 15px;
+}
+
+#chart {
+    width: 100%;
+}
+
+th {
+    padding: 5px;
+    text-align: left;
+
+}
