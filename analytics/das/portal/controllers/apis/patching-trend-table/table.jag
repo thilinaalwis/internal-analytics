@@ -1,0 +1,56 @@
+<%
+/*
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ */
+//make the db connection through the UniDash_DS datasource
+var db = new Database("UnifiedDashboards");
+function getRecords() {
+    //select the data set with maximum timestamp
+    var result = db.query("SELECT t.id,t.OverviewName,t.DateReleasedOn,t.OverviewProduct,t._timestamp,t.OverviewCarbonPlatform  FROM (SELECT id,MAX(_timestamp) as time from PMTData group by id) as maxTable inner join PMTData as t on t.id=maxTable.id and t._timestamp=maxTable.time;");
+    var formated_result = [];
+    for (var i in result) {
+        // remove the "All product" and rename with "Kernel"
+        if (result[i].OverviewProduct.indexOf("All") != -1) {
+            result[i].OverviewProduct = "Kernel";
+        }
+        //when one patch belong to more than one product , seperate them as different result sets
+        if (result[i].OverviewProduct.indexOf(",") != -1) {
+            var products = result[i].OverviewProduct.split(",");
+            for (var j in products) {
+                formated_result.push({
+                    "OverviewName": result[i].OverviewName,
+                    "DateReleasedOn": result[i].DateReleasedOn,
+                    "product": products[j],
+                    "platform": result[i].OverviewCarbonPlatform
+                });
+            }
+        }
+        else {
+            formated_result.push({
+                "OverviewName": result[i].OverviewName,
+                "DateReleasedOn": result[i].DateReleasedOn,
+                "product": result[i].OverviewProduct,
+                "platform": result[i].OverviewCarbonPlatform
+            });
+        }
+    }
+    print(formated_result);
+    return result;
+}
+
+getRecords();
+
+%>
+

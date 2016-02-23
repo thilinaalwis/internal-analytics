@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs
+            title="Table"
+            author="WSO2 Gadget Server"
+            height="230"
+            scrolling="true"
+            tags="charts,bar,visualization,data"
+            description="A generic Bar Chart gadget, that takes a json datasource as an input. It can be configured to fetch data in defined intervals. This gadget can be used to create dashboards with statistical data. This gadget can be reused as an iframe in any web page as it is self contained.">
+    </ModulePrefs>
+    <UserPref
+            name="dataSource"
+            display_name="Data Source"
+            default_value="/portal/gadgets/bar-chart/datasource/dataFile4.jag">
+    </UserPref>
+
+    <UserPref
+            name="updateGraph"
+            display_name="Update Interval (s)"
+            default_value="No">
+    </UserPref>
+    <Content
+            type="html">
+        <![CDATA[
+            <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+                <link href="css/style.css" rel="stylesheet" type="text/css">
+                <script src="js/jquery.min.js"></script>
+	            <script src="js/jquery.tablesorter.min.js"></script>
+                <script src="js/table.js"></script>
+                 <script>
+                      $(function(){
+                                 $("#Table").tablesorter();
+                            });
+                 </script>
+         </head>
+         <body style="height: 2000px;">
+            <div>
+            <table id="Table" class="datatable"  width=1150px>
+            <thead>
+            <tr>
+  		        <th class="headerSortUp"> Support Account Key</th>
+		         <th class="headerSortUp"> Account Name </th>
+		        <th class="headerSortUp"> Remaining Hours </th>
+		        <th class="headerSortUp"> Expiry Date </th>
+	        </tr>
+           </thead>
+	        <tbody id="rows">
+	        </tbody>
+            </table>
+         </div>
+	    </body>
+        </html>
+        ]]>
+    </Content>
+</Module>

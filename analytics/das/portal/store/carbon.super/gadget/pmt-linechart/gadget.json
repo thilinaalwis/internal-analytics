@@ -1,0 +1,10 @@
+{
+    "id": "pmt-linechart",
+    "title": "Patch Count Vs Month Per Product",
+    "type": "gadget",
+    "thumbnail": "store://gadget/pmt-linechart/index.png",
+    "data": {
+        "url": "store://gadget/pmt-linechart/index.xml"
+    },
+    "description": "To display monthly  patch count per each product "
+}

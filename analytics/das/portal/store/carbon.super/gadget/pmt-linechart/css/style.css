@@ -1,0 +1,52 @@
+
+#display {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-radius: 3px;
+    background: #F9B36D;
+    padding: 20px;
+    width: 200px;
+    height: 5px;
+    left: left;
+}
+
+.top table {
+    width: 500px;
+}
+
+.datatable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.datatable th, .datatable td {
+    text-align: left;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.datatable tr:nth-child(even) {
+    background-color: #74F6CD
+}
+
+.datatable th {
+    background-color: #18F7B1;
+    color: white;
+}
+
+#header {
+    background-color:#FFFFE4 ;
+    color:black;
+    text-align:left;
+    padding:5px;
+}
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+.headerSortUp {
+    background: url(../img/bg.gif)
+    no-repeat 99%;
+}
