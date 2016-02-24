@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="InvoiceChartProxy" groupId="com.riyafa.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/InvoiceChartProxy.xml</file>
+    </artifact>
+    <artifact name="salesforceLogin" groupId="com.riyafa.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/salesforceLogin.xml</file>
+    </artifact>
+    <artifact name="theFaultSequence" groupId="com.riyafa.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/theFaultSequence.xml</file>
+    </artifact>
+</artifacts>
