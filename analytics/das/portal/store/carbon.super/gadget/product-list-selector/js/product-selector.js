@@ -33,40 +33,31 @@ $.post("/portal/controllers/apis/product-selector/product-selector.jag", {
     $("#productList").prop("selectedIndex", 0);
     //when selector get changed
     $("#productList").change(function () {
-        // get selected option of the selector
-        var selection = $(":selected", this).text();
-        //array to store product mapping names of each system.(currently we have Redmine,PMT,Jenkins)
-        var product_mapping_names = [];
-        //find the mapping names for the selected product from 3 systems
-        for (var i in data) {
-            if (selection == data[i].PRODUCT_NAME) {
-                product_mapping_names.push({
-                    //product name in REDMINE
-                    "redmine_name": data[i].REDMINE,
-                    // product name in PMT
-                    "PMT_name": data[i].PMT,
-                    //product name in JENKINS
-                    "Jenkins_name": data[i].JENKINS
-                });
-                break;
-            }
-        }
-        //publish the product_mapping_names to the subscribers
-        gadgets.Hub.publish('select', {
-            msg: product_mapping_names
-        });
 
+        dataMapping();
 
     });
 
 });
 //publish the selected option when dashboard is loading
 gadgets.HubSettings.onConnect = function () {
-    var selected_option = $("#productList option:selected").text();
+    dataMapping();
+   /* setTimeout(function () {
+        gadgets.Hub.publish('select', {
+            msg: product_mapping_names
+
+        });
+    }, 200);*/
+};
+
+function dataMapping(){
+    // get selected option of the selector
+    var selection = $("#productList option:selected").text();
+    //array to store product mapping names of each system.(currently we have Redmine,PMT,Jenkins)
     var product_mapping_names = [];
     //find the mapping names for the selected product from 3 systems
     for (var i in data) {
-        if (selected_option == data[i].PRODUCT_NAME) {
+        if (selection == data[i].PRODUCT_NAME) {
             product_mapping_names.push({
                 //product name in REDMINE
                 "redmine_name": data[i].REDMINE,
@@ -78,10 +69,10 @@ gadgets.HubSettings.onConnect = function () {
             break;
         }
     }
-    setTimeout(function () {
-        gadgets.Hub.publish('select', {
-            msg: product_mapping_names
 
-        });
-    }, 200);
+    //publish the product_mapping_names to the subscribers
+    gadgets.Hub.publish('select', {
+        msg: product_mapping_names
+    });
 }
+

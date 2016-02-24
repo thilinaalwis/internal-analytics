@@ -1,0 +1,15 @@
+{
+    "id": "date-publisher",
+    "title": "Date-Publisher",
+    "type": "gadget",
+    "thumbnail": "store://gadget/date-publisher/index.png",
+    "data": {
+        "url": "store://gadget/date-publisher/index.xml"
+    },
+    "notify": {
+        "date-publisher": {
+            "type": "dates",
+            "description": "This notifies the selected dates"
+        }
+    }
+}

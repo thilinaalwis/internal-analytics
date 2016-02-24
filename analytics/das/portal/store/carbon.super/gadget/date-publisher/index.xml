@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Date Publisher" height="250" description="Date publisher gadget.">
+        <Require feature="pubsub-2"/>
+        <Require feature="dynamic-height"/>
+    </ModulePrefs>
+    <Content type="html">
+        <![CDATA[
+        <head>
+           <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+            <script language="javascript" type="text/javascript" src="/portal/js/jquery-1.10.2.js"></script>
+            <script src="js/jquery-ui.js"></script>
+            <script language="javascript" type="text/javascript" src="js/dateSelector.js"></script>
+            <head>
+            <body>
+           
+                <table>
+                    <tr>
+                        <th>
+                            From: <input type="text" id="datepicker_from">
+                        </th>
+                        <th>
+                            To: <input type="text" id="datepicker_to">
+                        </th>
+                        <th>
+                             <button  onclick="buttonClick()">Draw</button>
+                        </th>
+                    </tr>
+                </table>
+            </body>
+        ]]>
+    </Content>
+</Module>
