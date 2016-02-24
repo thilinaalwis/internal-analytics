@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: org.apache.httpcomponents:httpclient:4.3.6">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.admin.api:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.admin.api/4.2.0/org.wso2.carbon.registry.admin.api-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpcore-nio:4.3.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/httpcore-nio/4.3.3/httpcore-nio-4.3.3.jar" />
+  </library>
+  <library name="Maven: com.rabbitmq.wso2:amqp-client:3.4.4.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/com/rabbitmq/wso2/amqp-client/3.4.4.wso2v1/amqp-client-3.4.4.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.server.admin.ui:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.server.admin.ui/4.2.0/org.wso2.carbon.server.admin.ui-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.juddi:juddi-client:3.1.5.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/juddi/juddi-client/3.1.5.wso2v1/juddi-client-3.1.5.wso2v1.jar" />
+  </library>
+  <library name="Maven: net.minidev:json-smart:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/net/minidev/json-smart/1.1/json-smart-1.1.jar" />
+  </library>
+  <library name="Maven: com.hazelcast.wso2:hazelcast:3.0.1.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/com/hazelcast/wso2/hazelcast/3.0.1.wso2v1/hazelcast-3.0.1.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-transport-local:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-transport-local/1.6.1-wso2v12/axis2-transport-local-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="Maven: commons-beanutils:commons-beanutils:1.8.0">
+    <archive path="/Users/Chanuka/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar" />
+  </library>
+  <library name="Maven: commons-httpclient.wso2:commons-httpclient:3.1.0.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/commons-httpclient/wso2/commons-httpclient/3.1.0.wso2v2/commons-httpclient-3.1.0.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi-scratchpad:3.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/poi-scratchpad/3.9/poi-scratchpad-3.9.jar" />
+  </library>
+  <library name="Maven: wsdl4j:wsdl4j:1.6.2">
+    <archive path="/Users/Chanuka/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar" />
+  </library>
+  <library name="Maven: cglib:cglib-nodep:2.1_3">
+    <archive path="/Users/Chanuka/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-hg:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-hg/1.7/maven-scm-provider-hg-1.7.jar" />
+  </library>
+  <library name="Maven: xerces:xercesImpl:2.8.1">
+    <archive path="/Users/Chanuka/.m2/repository/xerces/xercesImpl/2.8.1/xercesImpl-2.8.1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.servlet:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.servlet/4.2.0/org.wso2.carbon.registry.servlet-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-api:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-api/1.7/maven-scm-api-1.7.jar" />
+  </library>
+  <library name="Maven: org.wso2.eventing:wso2eventing-api:2.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/eventing/wso2eventing-api/2.1/wso2eventing-api-2.1.jar" />
+  </library>
+  <library name="Maven: org.apache.derby:derby:10.4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/derby/derby/10.4.2.0/derby-10.4.2.0.jar" />
+  </library>
+  <library name="Maven: wsdl4j.wso2:wsdl4j:1.6.2.wso2v4">
+    <archive path="/Users/Chanuka/.m2/repository/wsdl4j/wso2/wsdl4j/1.6.2.wso2v4/wsdl4j-1.6.2.wso2v4.jar" />
+  </library>
+  <library name="Maven: org.eclipse.osgi:org.eclipse.osgi:3.8.1.v20120830-144521">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/osgi/org.eclipse.osgi/3.8.1.v20120830-144521/org.eclipse.osgi-3.8.1.v20120830-144521.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-saaj:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-saaj/1.6.1-wso2v12/axis2-saaj-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpcore:4.2.4">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.feature.mgt.core:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.core/4.2.0/org.wso2.carbon.feature.mgt.core-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.poi.wso2:poi-ooxml:3.9.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/wso2/poi-ooxml/3.9.0.wso2v1/poi-ooxml-3.9.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-synergy:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-synergy/1.7/maven-scm-provider-synergy-1.7.jar" />
+  </library>
+  <library name="Maven: org.bouncycastle:bcprov-jdk15on:1.52">
+    <archive path="/Users/Chanuka/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.52/bcprov-jdk15on-1.52.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.api:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.api/4.2.0/org.wso2.carbon.registry.api-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.ntask.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.ntask.common/4.2.0/org.wso2.carbon.ntask.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.rampart.wso2:rampart-trust:1.6.1.wso2v9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/rampart/wso2/rampart-trust/1.6.1.wso2v9/rampart-trust-1.6.1.wso2v9.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.governance.api:4.2.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.governance.api/4.2.1/org.wso2.carbon.governance.api-4.2.1.jar" />
+  </library>
+  <library name="Maven: commons-beanutils.wso2:commons-beanutils:1.8.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-beanutils/wso2/commons-beanutils/1.8.0.wso2v1/commons-beanutils-1.8.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: asm:asm-attrs:1.5.3">
+    <archive path="/Users/Chanuka/.m2/repository/asm/asm-attrs/1.5.3/asm-attrs-1.5.3.jar" />
+  </library>
+  <library name="Maven: xerces:xmlParserAPIs:2.6.2">
+    <archive path="/Users/Chanuka/.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant:1.7.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-tfs:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-tfs/1.7/maven-scm-provider-tfs-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-vss:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-vss/1.7/maven-scm-provider-vss-1.7.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jettison:jettison:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar" />
+  </library>
+  <library name="Maven: com.sun.codemodel:codemodel:2.4.1">
+    <archive path="/Users/Chanuka/.m2/repository/com/sun/codemodel/codemodel/2.4.1/codemodel-2.4.1.jar" />
+  </library>
+  <library name="Maven: bouncycastle:bcprov-jdk15:132">
+    <archive path="/Users/Chanuka/.m2/repository/bouncycastle/bcprov-jdk15/132/bcprov-jdk15-132.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.axiom:axiom-dom:1.2.11-wso2v6">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/axiom/axiom-dom/1.2.11-wso2v6/axiom-dom-1.2.11-wso2v6.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate-commons-annotations:3.0.0.ga">
+    <archive path="/Users/Chanuka/.m2/repository/org/hibernate/hibernate-commons-annotations/3.0.0.ga/hibernate-commons-annotations-3.0.0.ga.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.securevault:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.securevault/4.2.0/org.wso2.carbon.securevault-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.tiles.wso2:tiles-jsp:2.0.5.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tiles/wso2/tiles-jsp/2.0.5.wso2v2/tiles-jsp-2.0.5.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-git-commons:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-git-commons/1.7/maven-scm-provider-git-commons-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-transport-base:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-transport-base/1.6.1-wso2v12/axis2-transport-base-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="mysql-connector-java-5.1.29">
+    <archive path="/Users/Chanuka/work/salesforce_project/cep/wso2cep-4.0.0-SNAPSHOT/repository/components/lib/mysql-connector-java-5.1.29.jar" />
+  </library>
+  <library name="Maven: org.wso2.wsdl.validator.wso2:wsdl-validator:1.2.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/wsdl/validator/wso2/wsdl-validator/1.2.0.wso2v1/wsdl-validator-1.2.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi:3.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpcore:4.3.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.axiom:axiom-api:1.2.11-wso2v4">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/axiom/axiom-api/1.2.11-wso2v4/axiom-api-1.2.11-wso2v4.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.axiom.wso2:axiom:1.2.11.wso2v4">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/axiom/wso2/axiom/1.2.11.wso2v4/axiom-1.2.11.wso2v4.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-svnexe:1.7.0-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.7.0-wso2v1/maven-scm-provider-svnexe-1.7.0-wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-ws-metadata_2.0_spec:1.1.2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-ws-metadata_2.0_spec/1.1.2/geronimo-ws-metadata_2.0_spec-1.1.2.jar" />
+  </library>
+  <library name="Maven: org.quartz-scheduler.wso2:quartz:2.1.1.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/quartz-scheduler/wso2/quartz/2.1.1.wso2v1/quartz-2.1.1.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-starteam:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-starteam/1.7/maven-scm-provider-starteam-1.7.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.user.api:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.api/4.2.0/org.wso2.carbon.user.api-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate-entitymanager:3.3.1.ga">
+    <archive path="/Users/Chanuka/.m2/repository/org/hibernate/hibernate-entitymanager/3.3.1.ga/hibernate-entitymanager-3.3.1.ga.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.core:2.1.0.v20110502-1955">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.core/2.1.0.v20110502-1955/org.eclipse.equinox.p2.core-2.1.0.v20110502-1955.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.registry:3.5.100.v20110502">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.registry/3.5.100.v20110502/org.eclipse.equinox.registry-3.5.100.v20110502.jar" />
+  </library>
+  <library name="Maven: jboss:jboss-common-core:2.0.4.GA">
+    <archive path="/Users/Chanuka/.m2/repository/jboss/jboss-common-core/2.0.4.GA/jboss-common-core-2.0.4.GA.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate-annotations:3.3.0.ga">
+    <archive path="/Users/Chanuka/.m2/repository/org/hibernate/hibernate-annotations/3.3.0.ga/hibernate-annotations-3.3.0.ga.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.9/jackson-mapper-asl-1.9.9.jar" />
+  </library>
+  <library name="Maven: org.apache.poi.wso2:poi-scratchpad:3.9.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/wso2/poi-scratchpad/3.9.0.wso2v1/poi-scratchpad-3.9.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: wrapper:wrapper:3.2.3">
+    <archive path="/Users/Chanuka/.m2/repository/wrapper/wrapper/3.2.3/wrapper-3.2.3.jar" />
+  </library>
+  <library name="Maven: net.sf.ehcache:ehcache:1.2.3">
+    <archive path="/Users/Chanuka/.m2/repository/net/sf/ehcache/ehcache/1.2.3/ehcache-1.2.3.jar" />
+  </library>
+  <library name="Maven: javax.ws.rs:jsr311-api:1.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents.wso2:httpcore:4.1.0-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/wso2/httpcore/4.1.0-wso2v1/httpcore-4.1.0-wso2v1.jar" />
+  </library>
+  <library name="Maven: dom4j:dom4j:1.6.1">
+    <archive path="/Users/Chanuka/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.9/jackson-core-asl-1.9.9.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpclient:4.2.5">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar" />
+  </library>
+  <library name="Maven: commons-cli:commons-cli:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-manager-plexus:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-manager-plexus/1.7/maven-scm-manager-plexus-1.7.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.artifact.repository:1.1.100.v20110519">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.artifact.repository/1.1.100.v20110519/org.eclipse.equinox.p2.artifact.repository-1.1.100.v20110519.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-cvs-commons:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.7/maven-scm-provider-cvs-commons-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-svn-commons:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.7/maven-scm-provider-svn-commons-1.7.jar" />
+  </library>
+  <library name="Maven: javax.transaction:jta:1.0.1B">
+    <archive path="/Users/Chanuka/.m2/repository/javax/transaction/jta/1.0.1B/jta-1.0.1B.jar" />
+  </library>
+  <library name="Maven: commons-httpclient:commons-httpclient:3.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar" />
+  </library>
+  <library name="Maven: javax.cache:cache-api:0.5">
+    <archive path="/Users/Chanuka/.m2/repository/javax/cache/cache-api/0.5/cache-api-0.5.jar" />
+  </library>
+  <library name="Maven: com.sun.localizer:comresrcgen:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/sun/localizer/comresrcgen/1.0/comresrcgen-1.0.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.0.0/jackson-databind-2.0.0.jar" />
+  </library>
+  <library name="Maven: org.apache.synapse:synapse-tasks:2.1.3-wso2v11">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/synapse/synapse-tasks/2.1.3-wso2v11/synapse-tasks-2.1.3-wso2v11.jar" />
+  </library>
+  <library name="plugins">
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/slf4j.api_1.6.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/ant_1.7.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jxl_2.6.8.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/ode_1.3.5.wso2v9.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/poi_3.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jaxb_2.1.7.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jdom_1.0.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/js_1.7.0.R4wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/json_2.0.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jstl_1.2.1.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/rome_0.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/solr_1.4.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/antlr_3.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/itext_2.1.7.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/juddi_3.1.5.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/serp_1.13.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/smack_3.0.4.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/abdera_1.0.0.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/axiom_1.2.11.wso2v4.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/axis2_1.6.1.wso2v10.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/guava_12.0.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/neethi_2.0.4.wso2v4.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/quartz_2.1.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/slf4j.log4j12_1.6.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/wsdl4j_1.6.2.wso2v4.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/wss4j_1.5.11.wso2v6.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/annogen_0.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/compass_2.0.1.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/ehcache_1.5.0.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/el-impl_2.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/hsqldb_1.8.0.7wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jgroups_3.0.6.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/kaptcha_2.3.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/opencsv_1.8.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/perf4j_0.9.12.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/tomcat_7.0.34.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/tribes_7.0.34.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/com.google.gson_2.1.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/httpcore_4.3.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jcommon_1.0.15.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jettison_1.3.4.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/saxon.he_9.4.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/woden_1.0.0.M8-wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/xmlbeans_2.3.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/hazelcast_3.0.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.cache.wso2_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/libthrift_0.7.0.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/libthrift_0.8.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/maven-scm_1.7.0.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/opensaml2_2.4.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/poi-ooxml_3.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/tiles-jsp_2.0.5.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/wadl-core_1.1.3.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/XmlSchema_1.4.7.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-io_2.0.0.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/httpclient_4.2.5.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javasysmon_0.3.3.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jdbc-pool_7.0.34.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/tomcat-ha_7.0.34.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/axis2-json_1.6.1.wso2v10.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-cli_1.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/cors-filter_1.7.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/gdata-core_1.47.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/hector-core_1.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jasper-jdt_6.0.18.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jfreechart_1.0.13.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/json-simple_1.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jsr107cache_1.1.0.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/marshalling_1.3.6.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.rm_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/saxon.bps_9.0.0.x-wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/wso2-uri-templates_1.6.2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/amber_0.22.1358727.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-dbcp_1.4.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-lang_2.6.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-pool_1.5.6.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.sts_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/antlr-runtime_3.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/authenticator_0.7.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-codec_1.4.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-scxml_0.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jasperreports_4.5.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.servlet_3.0.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/jboss-logging_3.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.base_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.i18n_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/rampart-core_1.6.1.wso2v11.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/hadoop-core_0.20.203.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/high-scale-lib_1.1.2.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.utils_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/poi-scratchpad_3.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/rampart-trust_1.6.1.wso2v11.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/wsdl-validator_1.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/infinispan-core_5.1.2.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.el_2.2.0.v201108011116.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.sat4j.pb_2.3.0.v20110329.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tomcat_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/rampart-policy_1.6.1.wso2v11.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/synapse-commons_2.1.1.wso2v8.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/apache-cassandra_1.1.3.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-digester_1.8.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.caching_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.idp.mgt_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.queuing_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/spring.framework_3.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/ajaxtags_1.3.0.beta-rc7-wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-beanutils_1.8.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.sat4j.core_2.3.0.v20110329.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.ws_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.throttle_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.mgt_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-fileupload_1.2.2.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-httpclient_3.1.0.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/geronimo-connector_2.0.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/openid4java-nodeps_0.9.6.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.openjpa_2.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.humantask_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.qpid.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.roles.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.theme.mgt_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.um.ws.api_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/axis2-transport-jms_1.1.0.wso2v9.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-collections_3.2.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/java-property-utils_1.9.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.addressing_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.api_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.datasource_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.core_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.idp.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.module.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ntask.core_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.statistics_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tenant.mgt_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tomcat.ext_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.webapp.mgt_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.governance.styles_4.6.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/geronimo-transaction_2.0.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/h2-database-engine_1.2.140.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.servlet_3.0.0.v201112011016.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.core_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.impl_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.bpel.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.captcha.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.core.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.admin_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.securevault_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.service.mgt_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.usage.agent_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.securevault_1.0.0.wso2v2.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/commons-configuration_1.6.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.caching.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.client_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.idp.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.jasper.patch_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.keystore.mgt_2.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.mashup.utils_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ntask.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.jcr_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.reporting.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.roles.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.security.mgt_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.server.admin_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tomcat.patch_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/geronimo-saaj_1.3_spec_1.0.0.wso2v3.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.keymgt_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.core.services_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.base_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.core_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.jaxwsservices_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.operation.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.osgi.security_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.p2.touchpoint_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.info_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.task_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.uddi_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.reporting.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.statistics.ui_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tenant.mgt.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.throttle.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ui.menu.tools_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.um.ws.service_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.attachment.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.discovery.core_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.feature.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.api_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.lcm_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.humantask.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.oauth_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.reporting.core_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.reporting.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.reporting.util_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.roles.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.sequences.stub_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.stratos.common_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.um.ws.api.stub_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.webapp.list.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/backport-util-concurrent_3.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.servlet.jsp_2.0.0.v200806031607.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/javax.servlet.jsp_2.2.0.v201112011158.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.application.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.discovery.proxy_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.list_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.hostobjects.sso_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging.service_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging.view.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ntask.solutions_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.common_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.search_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.server_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.webdav_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.ws.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.security.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.server.admin.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.statistics.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tenant.mgt.core_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tenant.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ui.menu.general_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ui.menu.stratos_2.0.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.user.mgt.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.webapp.deployer_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.webapp.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.ecf_3.1.300.v20110531-2218.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.cluster.mgt.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.feature.mgt.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.feature.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.menu.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.sts.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.jaxws.webapp.mgt_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging.admin.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ndatasource.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.handler_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.info.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.servlet_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.ws.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.sample.installer_2.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.throttling.agent_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/geronimo-stax-api_1.0_spec_1.0.1.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.osgi_3.8.1.v20120830-144521.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.attachment.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.core.commons.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.event.client.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.client_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.lcm.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.provider_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging.view.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ndatasource.rdbms_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.eventing_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.indexing_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.profiles_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.resource_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.remote-tasks.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.security.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.server.admin.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.sso.redirector.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tenant.dispatcher_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.hostobjects_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.interceptor_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.keymgt.stub_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.application.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.application.upload_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.authenticator.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.databridge.commons_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.email.verification_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.framework.exporter_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.generic_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.humantask.deployer_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.humantask.skeleton_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.sts.store_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.sts.store_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.load.balance.agent_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.logging.admin.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ndatasource.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.redirector.servlet_2.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.admin.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.common.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.info.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.relations_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.reporting_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.search.ui_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.ws.client_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.ui.menu.governance_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.stratos.governance.styles_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.usage.client_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.attachment.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.authenticator.proxy_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.google.analytics.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.lcm.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.wsdltool_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.jaxws.webapp.mgt.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.activities_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.extensions_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.handler.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.properties_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.social.api_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.server.admin.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.stratos.common.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.keymgt.client_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.application.deployer_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.application.mgt.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.feature.mgt.services_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.profiles.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.resource.ui_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.search.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.social.impl_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.unifiedendpoint.core_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.stratos.governance.login.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.ds_1.4.0.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.bam.presentation.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.core.bootup.validator_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.email.verification.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.generic.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.oauth.common_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.profile_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.jaxws.webapp.deployer_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.redirector.servlet.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.handler.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.relations.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.reporting.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.throttling.agent.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.tomcat.fragment.dummy_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.http.helper_1.1.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apache.jasper.fragment_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.usage.publisher_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.wsdltool.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.sso.saml.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.activities.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.extensions.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.profiles.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.properties.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.resource.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/geronimo-j2ee-connector_1.5_spec_1.0.0.wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.core.runtime_3.8.0.v20120521-2346.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.engine_2.1.0.v20110511.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.attachment.mgt.skeleton_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.databridge.agent.thrift_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.email.verification.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.generic.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.authentication_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.redirector.servlet.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.relations.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.reporting.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.core.jobs_3.5.300.v20120622-204750.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.app_1.3.100.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.core_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.scriptengine_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.startup.publisher_1.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.wsdltool.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.profile.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.activities.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.extensions.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.registry.properties.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.stratos.governance.dashboard.ui_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.felix.gogo.shell_0.8.0.v201110170705.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.jasper.glassfish_2.2.2.v201205150955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.ecf.identity_3.1.100.v20110531-2218.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110510.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.util_1.0.400.v20120522-2049.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.tools_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.databridge.commons.thrift_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.console_1.0.0.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.core_2.1.0.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.publisher_1.2.0.v20110511.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.osgi.services_3.3.100.v20120522-1822.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.db_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.ws_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.profile.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.registration_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.felix.gogo.command_0.8.0.v201108120515.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.felix.gogo.runtime_0.8.0.v201108120515.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.ecf.filetransfer_5.0.0.v20110531-2218.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.repository_2.1.0.v20110601.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.log_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.uri_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.web_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.xhr_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.app.mgt_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.notifications.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.humantask.cleanup.scheduler_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.feed_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.file_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.uuid_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.xslt_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.deployer_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.registry.eventing_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.core.contenttype_3.4.200.v20120523-2004.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.updatesite_1.0.300.v20110510.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.security_1.1.100.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.email_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.oauth_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.apimgt.handlers.security.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.notifications.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.stratos.landing.page.deployer_2.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.director_2.1.0.v20110504-1715.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.preferences_3.5.0.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.stream_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.app.mgt.ui_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.platform.extensions_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.registry.extensions_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.thrift.authentication_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.apache.geronimo.specs.geronimo-jpa_2.0_spec_1.0.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.core.expressions_3.4.401.v20120627-124442.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.concurrent_1.0.300.v20120522-2049.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.jsp.jasper_1.0.400.v20120522-2049.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.console_1.0.300.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.director.app_1.0.300.v20110505.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.process_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.registration.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.registry_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.jaggery.app.mgt.stub_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.authenticator.saml2.sso_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.http.servlet_1.1.300.v20120522-1841.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.store.configuration_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.garbagecollector_1.0.200.v20110510.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.authenticator.saml2.sso.ui_4.2.1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.ecf.provider.filetransfer_3.2.0.v20110531-2218.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.extensionlocation_1.2.100.v20110510.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.jarprocessor_1.0.200.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.wst.jsdt.debug.transport_1.0.100.v201109150330.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.store.configuration.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.frameworkadmin_2.0.100.v20120606-175127.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.transport.ecf_1.0.100.v20110902-0807.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.updatechecker_1.1.200.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.jaggeryjs.hostobjects.jaggeryparser_0.9.0.ALPHA4_wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.authenticator.saml2.sso.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.artifact.repository_1.1.100.v20110519.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.custom.lifecycles.checklist_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.notifications.worklist.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.store.configuration.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.mashup.javascript.hostobjects.registry_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.custom.lifecycles.history.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.authenticator.saml2.sso.common_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.directorywatcher_1.0.300.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.repository.tools_2.0.100.v20110512-1320.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110511-1359.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.simpleconfigurator_1.0.301.v20120828-033635.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.wst.jsdt.debug.rhino.debugger_1.0.300.v201109150503.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.custom.lifecycles.checklist.ui_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.touchpoint.eclipse_2.1.0.v20110511-wso2v1.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.p2.touchpoint.natives_1.0.300.v20110502-1955.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.identity.user.store.configuration.deployer_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.frameworkadmin.equinox_1.0.400.v20120428-0117.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.wso2.carbon.governance.custom.lifecycles.checklist.stub_4.2.0.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.ecf.provider.filetransfer.httpclient_4.0.200.v20120319-0616.jar" />
+    <archive path="/Users/Chanuka/Documents/WSO2/wso2products/governance_registry/wso2greg-4.6.0/repository/components/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20110808-1657.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-juli:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-juli/7.0.34/tomcat-juli-7.0.34.jar" />
+  </library>
+  <library name="Maven: jdom:jdom:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar" />
+  </library>
+  <library name="Maven: org.jvnet.ws.wadl:wadl-core:1.1.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/jvnet/ws/wadl/wadl-core/1.1.3/wadl-core-1.1.3.jar" />
+  </library>
+  <library name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.0.Final">
+    <archive path="/Users/Chanuka/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-transport-http:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-transport-http/1.6.1-wso2v12/axis2-transport-http-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.core.commons.stub:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.core.commons.stub/4.2.0/org.wso2.carbon.core.commons.stub-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.neethi.wso2:neethi:2.0.4.wso2v4">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/neethi/wso2/neethi/2.0.4.wso2v4/neethi-2.0.4.wso2v4.jar" />
+  </library>
+  <library name="Maven: org.snmp4j:snmp4j:2.0.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/snmp4j/snmp4j/2.0.3/snmp4j-2.0.3.jar" />
+  </library>
+  <library name="Maven: xmlunit:xmlunit:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/xmlunit/xmlunit/1.1/xmlunit-1.1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.ws.client:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.ws.client/4.2.0/org.wso2.carbon.registry.ws.client-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi-ooxml-schemas:3.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.server.admin.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.server.admin.common/4.2.0/org.wso2.carbon.server.admin.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.logging:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.logging/4.2.0/org.wso2.carbon.logging-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-gitexe:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-gitexe/1.7/maven-scm-provider-gitexe-1.7.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.simpleconfigurator:1.0.301.v20120828-033635">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.simpleconfigurator/1.0.301.v20120828-033635/org.eclipse.equinox.simpleconfigurator-1.0.301.v20120828-033635.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.bootstrap:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.bootstrap/4.2.0/org.wso2.carbon.bootstrap-4.2.0.jar" />
+  </library>
+  <library name="Maven: net.sf.saxon:saxon:8.9">
+    <archive path="/Users/Chanuka/.m2/repository/net/sf/saxon/saxon/8.9/saxon-8.9.jar" />
+  </library>
+  <library name="Maven: org.eclipse.core:org.eclipse.core.runtime:3.5.0.v20090429-1800">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/core/org.eclipse.core.runtime/3.5.0.v20090429-1800/org.eclipse.core.runtime-3.5.0.v20090429-1800.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-javamail_1.4_spec:1.6">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.6/geronimo-javamail_1.4_spec-1.6.jar" />
+  </library>
+  <library name="Maven: org.apache.rampart.wso2:rampart-core:1.6.1.wso2v9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/rampart/wso2/rampart-core/1.6.1.wso2v9/rampart-core-1.6.1.wso2v9.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.feature.mgt.services:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.feature.mgt.services/4.2.0/org.wso2.carbon.feature.mgt.services-4.2.0.jar" />
+  </library>
+  <library name="Maven: commons-lang.wso2:commons-lang:2.6.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-lang/wso2/commons-lang/2.6.0.wso2v1/commons-lang-2.6.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2.wso2:axis2-json:1.6.1.wso2v10">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/wso2/axis2-json/1.6.1.wso2v10/axis2-json-1.6.1.wso2v10.jar" />
+  </library>
+  <library name="Maven: xml-apis:xml-apis:1.3.04">
+    <archive path="/Users/Chanuka/.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar" />
+  </library>
+  <library name="Maven: javax.servlet:javax.servlet-api:3.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar" />
+  </library>
+  <library name="Maven: org.slf4j:slf4j-api:1.6.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.common.ui:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.common.ui/4.2.0/org.wso2.carbon.registry.common.ui-4.2.0.jar" />
+  </library>
+  <library name="Maven: com.ibm.icu:icu4j:3.8">
+    <archive path="/Users/Chanuka/.m2/repository/com/ibm/icu/icu4j/3.8/icu4j-3.8.jar" />
+  </library>
+  <library name="Maven: jboss:javassist:3.3.ga">
+    <archive path="/Users/Chanuka/.m2/repository/jboss/javassist/3.3.ga/javassist-3.3.ga.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.extensions:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.extensions/4.2.0/org.wso2.carbon.registry.extensions-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.engine:2.1.0.v20110511">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.engine/2.1.0.v20110511/org.eclipse.equinox.p2.engine-2.1.0.v20110511.jar" />
+  </library>
+  <library name="Maven: commons-collections.wso2:commons-collections:3.2.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-collections/wso2/commons-collections/3.2.0.wso2v1/commons-collections-3.2.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-jdbc:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-jdbc/7.0.34/tomcat-jdbc-7.0.34.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat.wso2:jdbc-pool:7.0.34.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/wso2/jdbc-pool/7.0.34.wso2v1/jdbc-pool-7.0.34.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.juddi:uddi-ws:3.1.5.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/juddi/uddi-ws/3.1.5.wso2v1/uddi-ws-3.1.5.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-clearcase:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-clearcase/1.7/maven-scm-provider-clearcase-1.7.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.authenticator.proxy:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.authenticator.proxy/4.2.0/org.wso2.carbon.authenticator.proxy-4.2.0.jar" />
+  </library>
+  <library name="Maven: commons-io.wso2:commons-io:2.0.0.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/commons-io/wso2/commons-io/2.0.0.wso2v2/commons-io-2.0.0.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.netbeans.lib:cvsclient:20060125">
+    <archive path="/Users/Chanuka/.m2/repository/org/netbeans/lib/cvsclient/20060125/cvsclient-20060125.jar" />
+  </library>
+  <library name="Maven: commons-logging:commons-logging:1.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+  </library>
+  <library name="Maven: au.com.bytecode.opencsv.wso2:opencsv:1.8.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/au/com/bytecode/opencsv/wso2/opencsv/1.8.wso2v1/opencsv-1.8.wso2v1.jar" />
+  </library>
+  <library name="Maven: xmlunit:xmlunit:1.3">
+    <archive path="/Users/Chanuka/.m2/repository/xmlunit/xmlunit/1.3/xmlunit-1.3.jar" />
+  </library>
+  <library name="Maven: com.sun.localizer:localizer:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/sun/localizer/localizer/1.0/localizer-1.0.jar" />
+  </library>
+  <library name="Maven: com.hazelcast:hazelcast:3.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/com/hazelcast/hazelcast/3.0.1/hazelcast-3.0.1.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-kernel:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-kernel/1.6.1-wso2v12/axis2-kernel-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="Maven: com.damnhandy:handy-uri-templates:1.1.7">
+    <archive path="/Users/Chanuka/.m2/repository/com/damnhandy/handy-uri-templates/1.1.7/handy-uri-templates-1.1.7.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.ui:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.ui/4.2.0/org.wso2.carbon.ui-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.axiom:axiom-impl:1.2.11-wso2v4">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/axiom/axiom-impl/1.2.11-wso2v4/axiom-impl-1.2.11-wso2v4.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate:3.2.5.ga">
+    <archive path="/Users/Chanuka/.m2/repository/org/hibernate/hibernate/3.2.5.ga/hibernate-3.2.5.ga.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-util:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-util/7.0.34/tomcat-util-7.0.34.jar" />
+  </library>
+  <library name="Maven: org.apache.synapse:synapse-nhttp-transport:2.1.3-wso2v11">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/synapse/synapse-nhttp-transport/2.1.3-wso2v11/synapse-nhttp-transport-2.1.3-wso2v11.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.authenticator.stub:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.authenticator.stub/4.2.0/org.wso2.carbon.authenticator.stub-4.2.0.jar" />
+  </library>
+  <library name="Maven: net.sourceforge.serp:serp:1.13.1">
+    <archive path="/Users/Chanuka/.m2/repository/net/sourceforge/serp/serp/1.13.1/serp-1.13.1.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:javax.servlet:3.0.0.v201112011016">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.http.servlet:1.1.300.v20120522-1841">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.http.servlet/1.1.300.v20120522-1841/org.eclipse.equinox.http.servlet-1.1.300.v20120522-1841.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.ws.stub:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.ws.stub/4.2.0/org.wso2.carbon.registry.ws.stub-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.common:3.6.100.v20120522-1841">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.common/3.6.100.v20120522-1841/org.eclipse.equinox.common-3.6.100.v20120522-1841.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-client:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-client/1.7/maven-scm-client-1.7.jar" />
+  </library>
+  <library name="Maven: org.bouncycastle:bcpkix-jdk15on:1.52">
+    <archive path="/Users/Chanuka/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.52/bcpkix-jdk15on-1.52.jar" />
+  </library>
+  <library name="Maven: uddi:uddi4j:1.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/uddi/uddi4j/1.0.1/uddi4j-1.0.1.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-tribes:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-tribes/7.0.34/tomcat-tribes-7.0.34.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.user.core:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.core/4.2.0/org.wso2.carbon.user.core-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.user.mgt:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.mgt/4.2.0/org.wso2.carbon.user.mgt-4.2.0.jar" />
+  </library>
+  <library name="Maven: c3p0:c3p0:0.9.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/c3p0/c3p0/0.9.1.1/c3p0-0.9.1.1.jar" />
+  </library>
+  <library name="Maven: org.wso2.securevault:org.wso2.securevault:1.0.0-wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/securevault/org.wso2.securevault/1.0.0-wso2v2/org.wso2.securevault-1.0.0-wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.abdera.wso2:abdera:1.0.0.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/abdera/wso2/abdera/1.0.0.wso2v2/abdera-1.0.0.wso2v2.jar" />
+  </library>
+  <library name="Maven: javax.jms:jms:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/javax/jms/jms/1.1/jms-1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat.ha.wso2:tomcat-ha:7.0.34.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/ha/wso2/tomcat-ha/7.0.34.wso2v1/tomcat-ha-7.0.34.wso2v1.jar" />
+  </library>
+  <library name="Maven: commons-collections:commons-collections:3.2">
+    <archive path="/Users/Chanuka/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar" />
+  </library>
+  <library name="Maven: org.apache.woden:woden-impl-dom:1.0M9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/woden/woden-impl-dom/1.0M9/woden-impl-dom-1.0M9.jar" />
+  </library>
+  <library name="Maven: org.apache.commons.ssl:not-yet-commons-ssl:0.3.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/commons/ssl/not-yet-commons-ssl/0.3.9/not-yet-commons-ssl-0.3.9.jar" />
+  </library>
+  <library name="Maven: org.eclipse.osgi:org.eclipse.osgi.services:3.3.100.v20120522-1822">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/osgi/org.eclipse.osgi.services/3.3.100.v20120522-1822/org.eclipse.osgi.services-3.3.100.v20120522-1822.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.0.0/jackson-annotations-2.0.0.jar" />
+  </library>
+  <library name="Maven: xalan:xalan:2.7.1">
+    <archive path="/Users/Chanuka/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-jazz:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-jazz/1.7/maven-scm-provider-jazz-1.7.jar" />
+  </library>
+  <library name="Maven: org.snmp4j:snmp4j-agent:2.0.5">
+    <archive path="/Users/Chanuka/.m2/repository/org/snmp4j/snmp4j-agent/2.0.5/snmp4j-agent-2.0.5.jar" />
+  </library>
+  <library name="Maven: commons-codec.wso2:commons-codec:1.3.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-codec/wso2/commons-codec/1.3.0.wso2v1/commons-codec-1.3.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-9">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar" />
+  </library>
+  <library name="Maven: xom:xom:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/xom/xom/1.0/xom-1.0.jar" />
+  </library>
+  <library name="Maven: javax.mail:mail:1.4">
+    <archive path="/Users/Chanuka/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.common/4.2.0/org.wso2.carbon.registry.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-stax-api_1.0_spec:1.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.0/geronimo-jpa_2.0_spec-1.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.ndatasource.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.ndatasource.common/4.2.0/org.wso2.carbon.ndatasource.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: solr.wso2:solr:1.4.1.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/solr/wso2/solr/1.4.1.wso2v1/solr-1.4.1.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.abdera.wso2:abdera:1.0.0.wso2v3">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/abdera/wso2/abdera/1.0.0.wso2v3/abdera-1.0.0.wso2v3.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-cvsjava:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsjava/1.7/maven-scm-provider-cvsjava-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-annotations-api:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-annotations-api/7.0.34/tomcat-annotations-api-7.0.34.jar" />
+  </library>
+  <library name="Maven: net.sourceforge.findbugs:annotations:1.3.2">
+    <archive path="/Users/Chanuka/.m2/repository/net/sourceforge/findbugs/annotations/1.3.2/annotations-1.3.2.jar" />
+  </library>
+  <library name="Maven: org.apache.ant.wso2:ant:1.7.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ant/wso2/ant/1.7.0.wso2v1/ant-1.7.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.core:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.core/4.2.0/org.wso2.carbon.core-4.2.0.jar" />
+  </library>
+  <library name="Maven: javax.xml.bind:jaxb-api:2.2.6">
+    <archive path="/Users/Chanuka/.m2/repository/javax/xml/bind/jaxb-api/2.2.6/jaxb-api-2.2.6.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.ndatasource.rdbms:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.ndatasource.rdbms/4.2.0/org.wso2.carbon.ndatasource.rdbms-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.apache.jasper.glassfish:2.2.2.v201205150955">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.apache.jasper.glassfish/2.2.2.v201205150955/org.apache.jasper.glassfish-2.2.2.v201205150955.jar" />
+  </library>
+  <library name="Maven: commons-dbcp:commons-dbcp:1.2.2">
+    <archive path="/Users/Chanuka/.m2/repository/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar" />
+  </library>
+  <library name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.0.0/jackson-core-2.0.0.jar" />
+  </library>
+  <library name="Maven: org.aspectj:aspectjweaver:1.8.5">
+    <archive path="/Users/Chanuka/.m2/repository/org/aspectj/aspectjweaver/1.8.5/aspectjweaver-1.8.5.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2.wso2:axis2:1.6.1.wso2v10">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/wso2/axis2/1.6.1.wso2v10/axis2-1.6.1.wso2v10.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.core.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.core.common/4.2.0/org.wso2.carbon.core.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-api:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-api/7.0.34/tomcat-api-7.0.34.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.queuing:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.queuing/4.2.0/org.wso2.carbon.queuing-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.juddi.wso2:juddi:3.0.3.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/juddi/wso2/juddi/3.0.3.wso2v2/juddi-3.0.3.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-activation_1.1_spec:1.0.2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-activation_1.1_spec/1.0.2/geronimo-activation_1.1_spec-1.0.2.jar" />
+  </library>
+  <library name="Maven: jaxen:jaxen:1.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/jaxen/jaxen/1.1.1/jaxen-1.1.1.jar" />
+  </library>
+  <library name="Maven: regexp:regexp:1.3">
+    <archive path="/Users/Chanuka/.m2/repository/regexp/regexp/1.3/regexp-1.3.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.indexing:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.indexing/4.2.0/org.wso2.carbon.registry.indexing-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.codehaus.woodstox:wstx-asl:3.2.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar" />
+  </library>
+  <library name="Maven: org.apache.juddi:juddi-core:3.1.5.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/juddi/juddi-core/3.1.5.wso2v1/juddi-core-3.1.5.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.caching:wso2caching-core:4.0.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/caching/wso2caching-core/4.0.3/wso2caching-core-4.0.3.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring-core:1.2.8">
+    <archive path="/Users/Chanuka/.m2/repository/org/springframework/spring-core/1.2.8/spring-core-1.2.8.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-bazaar:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-bazaar/1.7/maven-scm-provider-bazaar-1.7.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.server:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.server/4.2.0/org.wso2.carbon.registry.server-4.2.0.jar" />
+  </library>
+  <library name="Maven: antlr:antlr:2.7.7">
+    <archive path="/Users/Chanuka/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar" />
+  </library>
+  <library name="Maven: junit:junit:3.8.1">
+    <archive path="/Users/Chanuka/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar" />
+  </library>
+  <library name="Maven: org.apache.sandesha2:sandesha2-core:1.6.1-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/sandesha2/sandesha2-core/1.6.1-wso2v1/sandesha2-core-1.6.1-wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.poi:poi-ooxml:3.9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.8">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.8/tomcat-embed-logging-juli-7.0.8.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.http.helper:1.1.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.http.helper/1.1.0.wso2v1/org.eclipse.equinox.http.helper-1.1.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.uddi:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.uddi/4.2.0/org.wso2.carbon.registry.uddi-4.2.0.jar" />
+  </library>
+  <library name="Maven: javax.servlet.jsp.jstl.wso2:jstl:1.2.1.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/javax/servlet/jsp/jstl/wso2/jstl/1.2.1.wso2v2/jstl-1.2.1.wso2v2.jar" />
+  </library>
+  <library name="Maven: classworlds:classworlds:1.1-alpha-2">
+    <archive path="/Users/Chanuka/.m2/repository/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar" />
+  </library>
+  <library name="Maven: commons-io:commons-io:2.0">
+    <archive path="/Users/Chanuka/.m2/repository/commons-io/commons-io/2.0/commons-io-2.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.base:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.base/4.2.0/org.wso2.carbon.base-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.security.wso2:wss4j:1.5.11.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/security/wso2/wss4j/1.5.11.wso2v1/wss4j-1.5.11.wso2v1.jar" />
+  </library>
+  <library name="Maven: stax:stax-api:1.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar" />
+  </library>
+  <library name="Maven: javax.servlet:servlet-api:2.3">
+    <archive path="/Users/Chanuka/.m2/repository/javax/servlet/servlet-api/2.3/servlet-api-2.3.jar" />
+  </library>
+  <library name="Maven: commons-logging:commons-logging-api:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar" />
+  </library>
+  <library name="Maven: eclipse:validateutility:0.95">
+    <archive path="/Users/Chanuka/.m2/repository/eclipse/validateutility/0.95/validateutility-0.95.jar" />
+  </library>
+  <library name="Maven: org.wso2.wadl.core.wso2:wadl-core:1.1.3.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/wadl/core/wso2/wadl-core/1.1.3.wso2v2/wadl-core-1.1.3.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-mtompolicy:1.6.1-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-mtompolicy/1.6.1-wso2v1/axis2-mtompolicy-1.6.1-wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs.wso2:geronimo-stax-api_1.0_spec:1.0.1.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/wso2/geronimo-stax-api_1.0_spec/1.0.1.wso2v1/geronimo-stax-api_1.0_spec-1.0.1.wso2v1.jar" />
+  </library>
+  <library name="Maven: jline:jline:0.9.94">
+    <archive path="/Users/Chanuka/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar" />
+  </library>
+  <library name="Maven: javax.activation:activation:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-catalina:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-catalina/7.0.34/tomcat-catalina-7.0.34.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.metadata.repository:1.2.0.v20110511-1359">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.metadata.repository/1.2.0.v20110511-1359/org.eclipse.equinox.p2.metadata.repository-1.2.0.v20110511-1359.jar" />
+  </library>
+  <library name="Maven: org.codehaus.plexus:plexus-utils:2.0.5">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.user.mgt.common:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.user.mgt.common/4.2.0/org.wso2.carbon.user.mgt.common-4.2.0.jar" />
+  </library>
+  <library name="Maven: com.jayway.jsonpath:json-path:0.8.0">
+    <archive path="/Users/Chanuka/.m2/repository/com/jayway/jsonpath/json-path/0.8.0/json-path-0.8.0.jar" />
+  </library>
+  <library name="Maven: commons-digester:commons-digester:1.8">
+    <archive path="/Users/Chanuka/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar" />
+  </library>
+  <library name="Maven: junit:junit:4.11">
+    <archive path="/Users/Chanuka/.m2/repository/junit/junit/4.11/junit-4.11.jar" />
+  </library>
+  <library name="Maven: org.apache.woden:woden-impl-commons:1.0M9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/woden/woden-impl-commons/1.0M9/woden-impl-commons-1.0M9.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.server.admin.stub:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.server.admin.stub/4.2.0/org.wso2.carbon.server.admin.stub-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.antlr:stringtemplate:3.2.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/antlr/stringtemplate/3.2.1/stringtemplate-3.2.1.jar" />
+  </library>
+  <library name="Maven: javax.persistence:persistence-api:1.0">
+    <archive path="/Users/Chanuka/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.schema.wso2:XmlSchema:1.4.7.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/schema/wso2/XmlSchema/1.4.7.wso2v2/XmlSchema-1.4.7.wso2v2.jar" />
+  </library>
+  <library name="Maven: javax.validation:validation-api:1.0.0.GA">
+    <archive path="/Users/Chanuka/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar" />
+  </library>
+  <library name="Maven: commons-fileupload.wso2:commons-fileupload:1.2.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-fileupload/wso2/commons-fileupload/1.2.0.wso2v1/commons-fileupload-1.2.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: xalan:serializer:2.7.1">
+    <archive path="/Users/Chanuka/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar" />
+  </library>
+  <library name="Maven: org.igniterealtime.smack.wso2:smackx:3.0.4.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/igniterealtime/smack/wso2/smackx/3.0.4.wso2v1/smackx-3.0.4.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-local:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-local/1.7/maven-scm-provider-local-1.7.jar" />
+  </library>
+  <library name="Maven: org.quartz-scheduler:quartz:2.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/quartz-scheduler/quartz/2.1.1/quartz-2.1.1.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:javax.servlet.jsp:2.2.0.v201112011158">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/javax.servlet.jsp/2.2.0.v201112011158/javax.servlet.jsp-2.2.0.v201112011158.jar" />
+  </library>
+  <library name="Maven: org.hamcrest:hamcrest-core:1.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.core:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.core/4.2.0/org.wso2.carbon.registry.core-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.apache.log4j:1.2.13.v200706111418">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.apache.log4j/1.2.13.v200706111418/org.apache.log4j-1.2.13.v200706111418.jar" />
+  </library>
+  <library name="Maven: org.apache.commons:commons-vfs2:2.0-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/commons/commons-vfs2/2.0-wso2v12/commons-vfs2-2.0-wso2v12.jar" />
+  </library>
+  <library name="Maven: org.igniterealtime.smack.wso2:smack:3.0.4.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/igniterealtime/smack/wso2/smack/3.0.4.wso2v1/smack-3.0.4.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.compass-project.wso2:compass:2.0.1.wso2v2">
+    <archive path="/Users/Chanuka/.m2/repository/org/compass-project/wso2/compass/2.0.1.wso2v2/compass-2.0.1.wso2v2.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm.wso2:maven-scm:1.7.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/wso2/maven-scm/1.7.0.wso2v1/maven-scm-1.7.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jettison.wso2:jettison:1.1.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/codehaus/jettison/wso2/jettison/1.1.wso2v1/jettison-1.1.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.registry.xboot:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.registry.xboot/4.2.0/org.wso2.carbon.registry.xboot-4.2.0.jar" />
+  </library>
+  <library name="Maven: com.googlecode.jsonschema2pojo:jsonschema2pojo-core:0.3.4">
+    <archive path="/Users/Chanuka/.m2/repository/com/googlecode/jsonschema2pojo/jsonschema2pojo-core/0.3.4/jsonschema2pojo-core-0.3.4.jar" />
+  </library>
+  <library name="Maven: commons-lang:commons-lang:2.4">
+    <archive path="/Users/Chanuka/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.utils:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.utils/4.2.0/org.wso2.carbon.utils-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.tomcat:tomcat-catalina-ha:7.0.34">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/tomcat/tomcat-catalina-ha/7.0.34/tomcat-catalina-ha-7.0.34.jar" />
+  </library>
+  <library name="Maven: commons-fileupload:commons-fileupload:1.1.1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-fileupload/commons-fileupload/1.1.1/commons-fileupload-1.1.1.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-adb:1.6.1-wso2v12">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-adb/1.6.1-wso2v12/axis2-adb-1.6.1-wso2v12.jar" />
+  </library>
+  <library name="Maven: asm:asm:3.2">
+    <archive path="/Users/Chanuka/.m2/repository/asm/asm/3.2/asm-3.2.jar" />
+  </library>
+  <library name="Maven: commons-pool:commons-pool:1.5.6">
+    <archive path="/Users/Chanuka/.m2/repository/commons-pool/commons-pool/1.5.6/commons-pool-1.5.6.jar" />
+  </library>
+  <library name="Maven: com.sun.xml.bind:jaxb-impl:2.2.6">
+    <archive path="/Users/Chanuka/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.6/jaxb-impl-2.2.6.jar" />
+  </library>
+  <library name="Maven: commons-pool.wso2:commons-pool:1.5.6.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-pool/wso2/commons-pool/1.5.6.wso2v1/commons-pool-1.5.6.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:javax.cache.wso2:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/javax.cache.wso2/4.2.0/javax.cache.wso2-4.2.0.jar" />
+  </library>
+  <library name="Maven: net.sf.saxon:saxon-dom:8.9">
+    <archive path="/Users/Chanuka/.m2/repository/net/sf/saxon/saxon-dom/8.9/saxon-dom-8.9.jar" />
+  </library>
+  <library name="Maven: org.apache.woden.wso2:woden:1.0.0.M8-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/woden/wso2/woden/1.0.0.M8-wso2v1/woden-1.0.0.M8-wso2v1.jar" />
+  </library>
+  <library name="Maven: commons-configuration:commons-configuration:1.6">
+    <archive path="/Users/Chanuka/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.repository:2.1.0.v20110601">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.repository/2.1.0.v20110601/org.eclipse.equinox.p2.repository-2.1.0.v20110601.jar" />
+  </library>
+  <library name="Maven: ch.ethz.ganymed:ganymed-ssh2:build210">
+    <archive path="/Users/Chanuka/.m2/repository/ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210.jar" />
+  </library>
+  <library name="Maven: commons-dbcp.wso2:commons-dbcp:1.4.0.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/commons-dbcp/wso2/commons-dbcp/1.4.0.wso2v1/commons-dbcp-1.4.0.wso2v1.jar" />
+  </library>
+  <library name="Maven: com.sun.xml.bind:jaxb-xjc:2.2">
+    <archive path="/Users/Chanuka/.m2/repository/com/sun/xml/bind/jaxb-xjc/2.2/jaxb-xjc-2.2.jar" />
+  </library>
+  <library name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar" />
+  </library>
+  <library name="Maven: org.apache.neethi:neethi:2.0.4-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/neethi/neethi/2.0.4-wso2v1/neethi-2.0.4-wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2.wso2:axis2-client:1.6.1.wso2v10">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/wso2/axis2-client/1.6.1.wso2v10/axis2-client-1.6.1.wso2v10.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-clustering:1.6.1-wso2v10">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-clustering/1.6.1-wso2v10/axis2-clustering-1.6.1-wso2v10.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.remote-tasks.stub:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.remote-tasks.stub/4.2.0/org.wso2.carbon.remote-tasks.stub-4.2.0.jar" />
+  </library>
+  <library name="Maven: org.apache.rampart.wso2:rampart-policy:1.6.1.wso2v9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/rampart/wso2/rampart-policy/1.6.1.wso2v9/rampart-policy-1.6.1.wso2v9.jar" />
+  </library>
+  <library name="Maven: org.apache.juddi:uddi-tck-base:3.1.5.wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/juddi/uddi-tck-base/3.1.5.wso2v1/uddi-tck-base-3.1.5.wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.ws.commons.schema:XmlSchema:1.4.3">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ws/commons/schema/XmlSchema/1.4.3/XmlSchema-1.4.3.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-saaj_1.3_spec:1.0.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-saaj_1.3_spec/1.0.1/geronimo-saaj_1.3_spec-1.0.1.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-perforce:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-perforce/1.7/maven-scm-provider-perforce-1.7.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.director:2.1.0.v20110504-1715">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.director/2.1.0.v20110504-1715/org.eclipse.equinox.p2.director-2.1.0.v20110504-1715.jar" />
+  </library>
+  <library name="Maven: commons-beanutils:commons-beanutils-core:1.8.0">
+    <archive path="/Users/Chanuka/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar" />
+  </library>
+  <library name="Maven: org.wso2.carbon:org.wso2.carbon.ntask.core:4.2.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/wso2/carbon/org.wso2.carbon.ntask.core/4.2.0/org.wso2.carbon.ntask.core-4.2.0.jar" />
+  </library>
+  <library name="Maven: com.google.code.findbugs:annotations:1.3.9">
+    <archive path="/Users/Chanuka/.m2/repository/com/google/code/findbugs/annotations/1.3.9/annotations-1.3.9.jar" />
+  </library>
+  <library name="Maven: org.eclipse.equinox:org.eclipse.equinox.p2.metadata:2.1.0.v20110510">
+    <archive path="/Users/Chanuka/.m2/repository/org/eclipse/equinox/org.eclipse.equinox.p2.metadata/2.1.0.v20110510/org.eclipse.equinox.p2.metadata-2.1.0.v20110510.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant-launcher:1.7.0">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-accurev:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-accurev/1.7/maven-scm-provider-accurev-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.synapse:synapse-commons:2.1.3-wso2v11">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/synapse/synapse-commons/2.1.3-wso2v11/synapse-commons-2.1.3-wso2v11.jar" />
+  </library>
+  <library name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar" />
+  </library>
+  <library name="Maven: xalan:xalan:2.6.0">
+    <archive path="/Users/Chanuka/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar" />
+  </library>
+  <library name="Maven: org.antlr:antlr-runtime:3.4">
+    <archive path="/Users/Chanuka/.m2/repository/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar" />
+  </library>
+  <library name="Maven: commons-codec:commons-codec:1.2">
+    <archive path="/Users/Chanuka/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar" />
+  </library>
+  <library name="Maven: org.apache.maven.scm:maven-scm-provider-cvsexe:1.7">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsexe/1.7/maven-scm-provider-cvsexe-1.7.jar" />
+  </library>
+  <library name="Maven: org.apache.openjpa:openjpa:2.2.0-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/openjpa/openjpa/2.2.0-wso2v1/openjpa-2.2.0-wso2v1.jar" />
+  </library>
+  <library name="Maven: log4j:log4j:1.2.14">
+    <archive path="/Users/Chanuka/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar" />
+  </library>
+  <library name="Maven: org.apache.synapse:synapse-core:2.1.3-wso2v11">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/synapse/synapse-core/2.1.3-wso2v11/synapse-core-2.1.3-wso2v11.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate-validator:3.0.0.ga">
+    <archive path="/Users/Chanuka/.m2/repository/org/hibernate/hibernate-validator/3.0.0.ga/hibernate-validator-3.0.0.ga.jar" />
+  </library>
+  <library name="Maven: antlr:antlr:2.7.6">
+    <archive path="/Users/Chanuka/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar" />
+  </library>
+  <library name="Maven: org.apache.axis2:axis2-codegen:1.6.1-wso2v1">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/axis2/axis2-codegen/1.6.1-wso2v1/axis2-codegen-1.6.1-wso2v1.jar" />
+  </library>
+  <library name="Maven: org.apache.woden:woden-api:1.0M9">
+    <archive path="/Users/Chanuka/.m2/repository/org/apache/woden/woden-api/1.0M9/woden-api-1.0M9.jar" />
+  </library>
+</eclipse-userlibraries>
+

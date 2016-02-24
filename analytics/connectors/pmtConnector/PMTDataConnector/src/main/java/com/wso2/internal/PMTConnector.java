@@ -6,6 +6,7 @@ import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.context.ConfigurationContextFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.synapse.commons.evaluators.source.SourceTextRetriever;
 import org.apache.synapse.core.SynapseEnvironment;
 import org.w3c.dom.Document;
 import org.wso2.carbon.base.ServerConfiguration;
@@ -190,6 +191,7 @@ public class PMTConnector implements Task, ManagedLifecycle {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             int count = 0;
 
+            System.out.println("Connecting and retrieving data from PMT....");
             for (String patch : patches) {
                 String patchRecords;
                 try {
@@ -251,8 +253,6 @@ public class PMTConnector implements Task, ManagedLifecycle {
                     if(CarbonPlatform != "") {
                         List<String> items = Arrays.asList(TMPproducts.split("\\s*,\\s*"));
                         for (String it : items) {
-                            log.info("Storing PMT data...");
-                            System.out.println("Storing PMT data...");
                             count ++;
                             ResultSet resultSetProductVersion = null;
                             statement1 = conn.createStatement();
@@ -262,7 +262,7 @@ public class PMTConnector implements Task, ManagedLifecycle {
                                 String version = getVersion(it);
                                 String updatedName = UpdateProductName.UpdateName(it);
                                 if(version !=""){
-                                    finalNameWithVersion= updatedName +" "+ version;
+                                    finalNameWithVersion = updatedName +" "+ version;
                                 }
                                 else{
                                     getProductVersion = "SELECT ProductVersion FROM INTERNAL_PRODUCT_RELEASES WHERE " +
@@ -278,8 +278,6 @@ public class PMTConnector implements Task, ManagedLifecycle {
                                     }
                                     finalNameWithVersion = updatedName +" "+v;
                                 }
-
-
                                 if (registry.get(patch).getMediaType() != null) {
                                     MediaType = registry.get(patch).getMediaType();
                                 }
