@@ -1,0 +1,10 @@
+{
+  "id": "dev-support-hours-table",
+  "title": "Remaining Support Hours",
+  "type": "gadget",
+  "thumbnail": "store://gadget/dev-support-hours-table/index.png",
+  "data": {
+    "url": "store://gadget/dev-support-hours-table/index.xml"
+  },
+  "description": "To display remaining development support hours"
+}

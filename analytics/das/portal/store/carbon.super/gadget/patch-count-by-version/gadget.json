@@ -1,0 +1,10 @@
+{
+    "id": "patch-count-by-product-table",
+    "title": "Patch Count by Product",
+    "type": "gadget",
+    "thumbnail": "store://gadget/patch-count-by-product-table/index.png",
+    "data": {
+        "url": "store://gadget/patch-count-by-product-table/index.xml"
+    },
+    "description": "To display patch count of each version for selected product"
+}

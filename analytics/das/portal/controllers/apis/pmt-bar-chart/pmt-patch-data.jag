@@ -1,0 +1,59 @@
+<%
+/*
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+ */
+//make the db connection through the UniDash_DS datasource
+var db = new Database("UnifiedDashboards");
+function getRecords() {
+    //get the data set with maximun timestamp
+    var result = db.query("SELECT t.id,t.OverviewName,t.DateReleasedOn,t.OverviewProduct,t._timestamp  FROM (SELECT id,MAX(_timestamp) as time from PMTData group by id) as maxTable inner join PMTData as t on t.id=maxTable.id and t._timestamp=maxTable.time;");
+    //array to store formatted data set
+    var sorted_data = [];
+    var counter = 0;
+    var flag = 0;
+    //remove the duplicate patches by matching the patch name and stor in sorted array
+    for (var i in result) {
+        if (sorted_data != null) {
+            flag = 0;
+            for (var j in sorted_data) {
+                if (sorted_data[j].OverviewName == result[i].OverviewName) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag != 1) {
+                sorted_data.push({
+                    "OverviewName": result[i].OverviewName,
+                    "DateReleasedOn": result[i].DateReleasedOn
+                });
+            }
+        }
+        else {
+            sorted_data.push({
+                "OverviewName": result[i].OverviewName,
+                "DateReleasedOn": result[i].DateReleasedOn
+            });
+        }
+
+    }
+    db.close();
+    print(sorted_data);
+    return sorted_data;
+}
+
+getRecords();
+
+%>
+

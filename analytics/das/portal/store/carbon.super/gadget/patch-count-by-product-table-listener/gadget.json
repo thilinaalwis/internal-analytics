@@ -1,0 +1,16 @@
+{
+    "id": "patch-count-by-product-table-listener",
+    "title": "Patch Count by Product-2",
+    "type": "gadget",
+    "thumbnail": "store://gadget/patch-count-by-product-table-listener/index.png",
+    "data": {
+        "url": "store://gadget/patch-count-by-product-table-listener/index.xml"
+    },
+   
+    "listen": {
+        "state-selected": {
+            "type": "address",
+            "description": "Used to filter based on state"
+        }
+}
+}

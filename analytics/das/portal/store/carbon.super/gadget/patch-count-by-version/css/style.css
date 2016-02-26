@@ -1,0 +1,41 @@
+label {
+    color: black;
+    width: 50px;
+    width: 50%;
+    float: left;
+    font: bold 15px arial, sans-serif;
+}
+
+#x {
+    position: relative;
+
+}
+
+.top table {
+    width: 500px;
+}
+
+.datatable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.datatable th, .datatable td {
+    text-align: left;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.datatable tr:nth-child(odd) {
+    background-color: #F9B36D
+}
+
+.datatable th {
+    background-color: #F77D03;
+    color: white;
+}
+
+.headerSortUp {
+    background: url(../img/bg.gif)
+    no-repeat 99%;
+}

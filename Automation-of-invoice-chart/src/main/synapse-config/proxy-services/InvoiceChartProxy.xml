@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="InvoiceChartProxy" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <!-- The acceess token -->
+      <property expression="json-eval($.accesstoken)"
+        name="accesstoken1" scope="default" type="STRING"/>
+      <!-- The key of the spreadsheet -->
+      <property expression="json-eval($.key)" name="sheetKey1"
+        scope="default" type="STRING"/>
+      <!-- The id of the worksheet in the spreadsheet -->
+      <property expression="json-eval($.workSheetId)" name="sheetId1"
+        scope="default" type="STRING"/>
+      <!-- The starting row number -->
+      <property expression="json-eval($.rowNum)" name="rowNum1"
+        scope="default" type="STRING"/>
+      <!-- The last row number in the sheet -->
+      <property expression="json-eval($.numRows)" name="rowss1"
+        scope="default" type="STRING"/>
+      <!-- The column number of the project -->
+      <property expression="json-eval($.colNumKey)"
+        name="retrieveColNum1" scope="default" type="STRING"/>
+      <!-- The column number of the column to be updated -->
+      <property expression="json-eval($.colNumUpdate)"
+        name="updateColNum1" scope="default" type="STRING"/>
+      <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+      <!-- initialize the connector -->
+      <salesforce.init configKey="salesforceLogin"/>
+      <!-- fetch the key column -->
+      <googlespreadsheet.init>
+        <accessToken>{$ctx:accesstoken1}</accessToken>
+      </googlespreadsheet.init>
+      <googlespreadsheet.fetchSpecificRowsOrColumns>
+        <key>{$ctx:sheetKey1}</key>
+        <worksheetId>{$ctx:sheetId1}</worksheetId>
+        <minRow>{$ctx:rowNum1}</minRow>
+        <maxRow>{$ctx:rowss1}</maxRow>
+        <minCol>{$ctx:retrieveColNum1}</minCol>
+        <maxCol>{$ctx:retrieveColNum1}</maxCol>
+      </googlespreadsheet.fetchSpecificRowsOrColumns>
+      <!-- Iterate through the cells in the column -->
+      <iterate description="" expression="//abc:entry" id="iterator1"
+        sequential="true" xmlns:abc="http://www.w3.org/2005/Atom">
+        <target>
+          <sequence>
+            <property expression="get-property('updateColNum1')"
+              name="updateColNum" scope="default" type="STRING"/>
+            <!-- Get the row number and the update cell Id -->
+            <property expression="//gs:cell/@row" name="rowNum"
+              scope="default" type="STRING" xmlns:gs="http://schemas.google.com/spreadsheets/2006"/>
+            <property
+              expression="fn:concat('R', get-property('rowNum'), 'C',get-property('updateColNum'))"
+              name="updateCellId" scope="default" type="STRING"/>
+            <script language="js"><![CDATA[var key = mc.getPayloadXML()..*::content.toString();
+      						key=key.split("-")[0];
+      						mc.setProperty("projKey",key);]]></script>
+            <!-- The query -->
+            <property
+              expression="fn:concat(&quot;SELECT CreatedDate,Invoice_Number__c FROM Line_Item__c WHERE Support_Account_ID__c ='&quot;, get-property('projKey'), &quot;' ORDER BY Invoice_Number__c ASC NULLS LAST limit 1&quot;)"
+              name="query1" scope="default" type="STRING"/>
+            <salesforce.query>
+              <batchSize>1</batchSize>
+              <queryString>{$ctx:query1}</queryString>
+            </salesforce.query>
+            <!-- Get invoice number and decide on invoice from -->
+            <script language="js"><![CDATA[var date=mc.getPayloadXML()..*::CreatedDate.toString();
+      	var invoiceNumber=mc.getPayloadXML()..*::Invoice_Number__c.toString()
+      	date=date.substring(0, 4);
+      	date=parseInt(date, 10);
+      	var invoiceVal;
+      	if(date>=2015){
+      		invoiceVal=invoiceNumber.substring(4, 7);
+      		invoiceVal=parseInt(invoiceVal, 10);
+      		if(invoiceVal<300){ //2015001 to 2015299
+      			mc.setProperty("invoiceFrom", "LK");
+      		}else if(invoiceVal<600){//2015300 to 2015599
+      			mc.setProperty("invoiceFrom", "UK");      			
+      		}else if(invoiceVal<1000){// 2015600 to ......
+      			mc.setProperty("invoiceFrom", "Inc");      		
+      		}else{
+      			mc.setProperty("invoiceFrom", "No Invoice Number");      			
+      		}
+      	}else if(date<2015){
+      		invoiceVal=invoiceNumber.substring(2, 4);
+      		invoiceVal=parseInt(invoiceVal, 10);
+      		if(invoiceNumber.length>6){
+      			mc.setProperty("invoiceFrom", "Inc"); 
+      		}else if(invoiceVal<30){
+      			mc.setProperty("invoiceFrom", "LK");
+      		}else if(invoiceVal<60){
+      			mc.setProperty("invoiceFrom", "UK");      			
+      		}else if(invoiceVal<100){
+      			mc.setProperty("invoiceFrom", "Inc");      		
+      		}else{
+      			mc.setProperty("invoiceFrom", "No Invoice Number");      			
+      		}
+      	}else{
+      		mc.setProperty("invoiceFrom", "No records found"); 
+      	}]]></script>
+            <filter regex=".*No Invoice Number" source="get-property('invoiceFrom')">
+              <then>
+                <property
+                  expression="fn:concat(&quot;SELECT AccountId FROM Opportunity WHERE Id IN (SELECT Opportunity__c FROM Line_Item__c WHERE Support_Account_ID__c ='&quot;, get-property('projKey'), &quot;') limit 1&quot;)"
+                  name="query1" scope="default" type="STRING"/>
+                <salesforce.query>
+                  <batchSize>1</batchSize>
+                  <queryString>{$ctx:query1}</queryString>
+                </salesforce.query>
+                <property expression="//sf:AccountId" name="accountId"
+                  scope="default" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+                <property
+                  expression="fn:concat(&quot;SELECT Region__c FROM Account WHERE Id ='&quot;, get-property('accountId'), &quot;' limit 1&quot;)"
+                  name="query2" scope="default" type="STRING"/>
+                <salesforce.query>
+                  <batchSize>1</batchSize>
+                  <queryString>{$ctx:query2}</queryString>
+                </salesforce.query>
+                <property expression="//sf:Region__c" name="invoiceFrom"
+                  scope="default" type="STRING" xmlns:sf="urn:sobject.partner.soap.sforce.com"/>
+              </then>
+              <else/>
+            </filter>
+            <property expression="get-property('accesstoken1')"
+              name="accesstoken" scope="default" type="STRING"/>
+            <property expression="get-property('sheetKey1')"
+              name="sheetKey" scope="default" type="STRING"/>
+            <property expression="get-property('sheetId1')"
+              name="sheetId" scope="default" type="STRING"/>
+            <property expression="get-property('updateCellId')"
+              name="cellId" scope="default" type="STRING"/>
+            <property action="remove" name="Accept-Encoding" scope="transport"/>
+            <googlespreadsheet.init>
+              <accessToken>{$ctx:accesstoken}</accessToken>
+            </googlespreadsheet.init>
+            <googlespreadsheet.getCell>
+              <key>{$ctx:sheetKey}</key>
+              <worksheetId>{$ctx:sheetId}</worksheetId>
+              <cellId>{$ctx:updateCellId}</cellId>
+            </googlespreadsheet.getCell>
+            <script language="js"><![CDATA[java.lang.Thread.sleep(10000);]]></script>
+            <property expression="//abc:entry/abc:link[2]/@href"
+              name="cellRef" scope="default" type="STRING"/>
+            <script language="js"><![CDATA[var cellRef=mc.getProperty("cellRef");
+      	var x=cellRef.split("/");
+      	var n=x.length-1;
+      	cellRef=x[n]; 
+      	mc.setProperty("cellVersion",cellRef)]]></script>
+            <property expression="get-property('rowNum')" name="row"
+              scope="default" type="STRING"/>
+            <property expression="get-property('updateColNum1')"
+              name="col" scope="default" type="STRING"/>
+            <property expression="get-property('invoiceFrom')"
+              name="inputValue" scope="default" type="STRING"/>
+            <property expression="get-property('updateCellId')"
+              name="cellId" scope="default" type="STRING"/>
+            <property expression="get-property('cellVersion')"
+              name="cellV" scope="default" type="STRING"/>
+            <property expression="get-property('sheetKey1')" name="key"
+              scope="default" type="STRING"/>
+            <property expression="get-property('sheetId1')" name="id"
+              scope="default" type="STRING"/>
+            <property expression="get-property('accesstoken1')"
+              name="accesstoken" scope="default" type="STRING"/>
+            <property action="remove" name="Accept-Encoding" scope="transport"/>
+            <googlespreadsheet.init>
+              <accessToken>{$ctx:accesstoken}</accessToken>
+            </googlespreadsheet.init>
+            <googlespreadsheet.updateCells>
+              <key>{$ctx:key}</key>
+              <worksheetId>{$ctx:id}</worksheetId>
+              <cellId>{$ctx:cellId}</cellId>
+              <inputValue>{$ctx:inputValue}</inputValue>
+              <row>{$ctx:row}</row>
+              <col>{$ctx:col}</col>
+              <cellVersion>{$ctx:cellV}</cellVersion>
+            </googlespreadsheet.updateCells>
+            <script language="js"><![CDATA[java.lang.Thread.sleep(10000);]]></script>
+          </sequence>
+        </target>
+      </iterate>
+      <!-- ITERATION 2 -->
+      <!-- fetch the proj column -->
+      <script language="js"><![CDATA[var x=parseInt(mc.getProperty("retrieveColNum1"),10)-1;
+        	mc.setProperty("retrieveColNum1",x+"");]]></script>
+      <googlespreadsheet.init>
+        <accessToken>{$ctx:accesstoken1}</accessToken>
+      </googlespreadsheet.init>
+      <googlespreadsheet.fetchSpecificRowsOrColumns>
+        <key>{$ctx:sheetKey1}</key>
+        <worksheetId>{$ctx:sheetId1}</worksheetId>
+        <minRow>{$ctx:rowNum1}</minRow>
+        <maxRow>{$ctx:rowss1}</maxRow>
+        <minCol>{$ctx:retrieveColNum1}</minCol>
+        <maxCol>{$ctx:retrieveColNum1}</maxCol>
+      </googlespreadsheet.fetchSpecificRowsOrColumns>
+      <!-- Iterate through the cells in the project column -->
+      <iterate description="" expression="//abc:entry" id="iterator2"
+        sequential="true" xmlns:abc="http://www.w3.org/2005/Atom">
+        <target>
+          <sequence>
+            <property expression="get-property('updateColNum1')"
+              name="updateColNum" scope="default" type="STRING"/>
+            <script language="js"><![CDATA[var str = mc.getPayloadXML()..*::content.toString();
+            				var suffix="Evaluation Support";
+            				
+							if(str.indexOf(suffix, str.length - suffix.length)!== -1){
+								mc.setProperty("invoice", "Complementary");
+							}]]></script>
+            <filter regex=".*Complementary" source="get-property('invoice')">
+              <then>
+                <property expression="//gs:cell/@row" name="rowNum"
+                  scope="default" type="STRING" xmlns:gs="http://schemas.google.com/spreadsheets/2006"/>
+                <property
+                  expression="fn:concat('R', get-property('rowNum'), 'C',get-property('updateColNum'))"
+                  name="updateCellId" scope="default" type="STRING"/>
+                <property expression="get-property('accesstoken1')"
+                  name="accesstoken" scope="default" type="STRING"/>
+                <property expression="get-property('sheetKey1')"
+                  name="sheetKey" scope="default" type="STRING"/>
+                <property expression="get-property('sheetId1')"
+                  name="sheetId" scope="default" type="STRING"/>
+                <property expression="get-property('updateCellId')"
+                  name="cellId" scope="default" type="STRING"/>
+                <property action="remove" name="Accept-Encoding" scope="transport"/>
+                <googlespreadsheet.init>
+                  <accessToken>{$ctx:accesstoken}</accessToken>
+                </googlespreadsheet.init>
+                <googlespreadsheet.getCell>
+                  <key>{$ctx:sheetKey}</key>
+                  <worksheetId>{$ctx:sheetId}</worksheetId>
+                  <cellId>{$ctx:updateCellId}</cellId>
+                </googlespreadsheet.getCell>
+                <script language="js"><![CDATA[java.lang.Thread.sleep(10000);]]></script>
+                <property expression="//abc:entry/abc:link[2]/@href"
+                  name="cellRef" scope="default" type="STRING"/>
+                <script language="js"><![CDATA[var cellRef=mc.getProperty("cellRef");
+      	var x=cellRef.split("/");
+      	var n=x.length-1;
+      	cellRef=x[n]; 
+      	mc.setProperty("cellVersion",cellRef)]]></script>
+                <!-- Update cell  -->
+                <property expression="get-property('rowNum')" name="row"
+                  scope="default" type="STRING"/>
+                <property expression="get-property('updateColNum')"
+                  name="col" scope="default" type="STRING"/>
+                <property expression="get-property('invoice')"
+                  name="inputValue" scope="default" type="STRING"/>
+                <property expression="get-property('updateCellId')"
+                  name="cellId" scope="default" type="STRING"/>
+                <property expression="get-property('cellVersion')"
+                  name="cellV" scope="default" type="STRING"/>
+                <property expression="get-property('sheetKey')"
+                  name="key" scope="default" type="STRING"/>
+                <property expression="get-property('sheetId')" name="id"
+                  scope="default" type="STRING"/>
+                <property expression="get-property('accesstoken1')"
+                  name="accesstoken" scope="default" type="STRING"/>
+                <property action="remove" name="Accept-Encoding" scope="transport"/>
+                <googlespreadsheet.init>
+                  <accessToken>{$ctx:accesstoken}</accessToken>
+                </googlespreadsheet.init>
+                <googlespreadsheet.updateCells>
+                  <key>{$ctx:key}</key>
+                  <worksheetId>{$ctx:id}</worksheetId>
+                  <cellId>{$ctx:cellId}</cellId>
+                  <inputValue>{$ctx:inputValue}</inputValue>
+                  <row>{$ctx:row}</row>
+                  <col>{$ctx:col}</col>
+                  <cellVersion>{$ctx:cellV}</cellVersion>
+                </googlespreadsheet.updateCells>
+                <script language="js"><![CDATA[java.lang.Thread.sleep(10000);]]></script>
+              </then>
+              <else/>
+            </filter>
+          </sequence>
+        </target>
+      </iterate>
+      <salesforce.logout/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence onError="theFaultSequence"/>
+  </target>
+  <parameter name="ApplicationXMLBuilder.allowDTD">true</parameter>
+</proxy>
